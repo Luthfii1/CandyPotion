@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		468A2F982C240229005C825F /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* QuestView.swift */; };
+		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
+		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
+		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
+		468A2FA22C241530005C825F /* QuestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* QuestPage.swift */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		468A2F972C240229005C825F /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
+		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
+		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
+		468A2FA12C241530005C825F /* QuestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPage.swift; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
@@ -101,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E092C1F5824003CD2CD /* PersonModel.swift */,
+				468A2F9F2C241056005C825F /* LoveLanguageModel.swift */,
 				9B89800C2C2283A700388BE1 /* QuestModel.swift */,
 				9B89800E2C22860200388BE1 /* AchievementModel.swift */,
 				9B8980102C22866F00388BE1 /* BadgeModel.swift */,
@@ -112,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
+				468A2F972C240229005C825F /* QuestView.swift */,
+				468A2FA12C241530005C825F /* QuestPage.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 			);
@@ -122,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E072C1F56A3003CD2CD /* TextFieldInput.swift */,
+				468A2F992C2406D9005C825F /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E0E2C1F598D003CD2CD /* MainVM.swift */,
+				468A2F9B2C2406F5005C825F /* QuestViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */,
 				9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */,
 				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
 				DDBB7E0A2C1F5824003CD2CD /* PersonModel.swift in Sources */,
@@ -223,6 +239,10 @@
 				9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */,
 				DDBB7E062C1F5657003CD2CD /* String+Extension.swift in Sources */,
 				DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */,
+				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
+				468A2F982C240229005C825F /* QuestView.swift in Sources */,
+				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
+				468A2FA22C241530005C825F /* QuestPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CandyPotion/Preview Content\"";
-				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				DEVELOPMENT_TEAM = F7WR45KMA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -386,7 +406,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CandyPotion/Preview Content\"";
-				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				DEVELOPMENT_TEAM = F7WR45KMA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
