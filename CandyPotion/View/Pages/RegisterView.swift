@@ -17,34 +17,36 @@ struct RegisterView: View {
     @State private var alertMessage = ""
 
     var body: some View {
-        Text("Let me know you")
+        NavigationStack {
+            Text("Let me know you")
 
-        VStack {
-            TextField("Name", text: $name)
-            TextField("Email", text: $email)
-            TextField("Password", text: $password)
-            TextField("Gender", text: $gender)
-        }.padding(.horizontal)
+            VStack {
+                TextField("Name", text: $name)
+                TextField("Email", text: $email)
+                TextField("Password", text: $password)
+                TextField("Gender", text: $gender)
+            }.padding(.horizontal)
 
-        Button {
-            submitFeedback()
-            print("HELLO")
-        } label: {
-            ZStack {
-                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                    .frame(height: 46)
-                    .padding(.horizontal)
-                    .foregroundColor(.gray)
-                Text("Register").foregroundStyle(.white)
+            Button {
+                submitFeedback()
+                print("HELLO")
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                        .frame(height: 46)
+                        .padding(.horizontal)
+                        .foregroundColor(.gray)
+                    Text("Register").foregroundStyle(.white)
+                }
             }
-        }
 
-        HStack {
-            Text("Already have an account?")
-            Button(action: {}, label: {
-                Text("Log In")
-            })
-        }
+            HStack {
+                Text("Already have an account?")
+                NavigationLink(destination: LoginView()) {
+                    Text("Log In")
+                }
+            }
+        }.navigationBarBackButtonHidden()
     }
 
     func submitFeedback() {
