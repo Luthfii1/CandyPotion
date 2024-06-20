@@ -6,6 +6,7 @@
 
 import Foundation
 
+//Beberapa questnya masih blm sesuai karena ga dilakuin secara online
 class QuestViewModel: ObservableObject {
     @Published var loveLanguage: LoveLanguageModel = .wordsOfAffirmation
     
