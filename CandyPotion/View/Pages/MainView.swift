@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var email: String
     var body: some View {
-        Text("Hello, this is main page!")
+        Text("Hello, \(email)! This is main page!")
     }
 }
 
 #Preview {
-    MainView()
+    MainView(email: "AL")
 }
