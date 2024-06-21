@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct CandyPotionApp: App {
+    @AppStorage("email") var email: String?
+    @AppStorage("token") var token: String?
+    @AppStorage("partnerID") var partnerID: String?
+
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if email == nil {
+                LoginView()
+            }
+            else if partnerID == "" {
+                InputCodeView()
+            }
+            else {
+                MainView()
+            }
         }
     }
 }

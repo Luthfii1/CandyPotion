@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct MainView: View {
+    @AppStorage("email") var email: String?
+
     var body: some View {
-        Text("Hello, this is main page!")
+        VStack {
+            if let savedPerson = UserDefaults.standard.person(forKey: "person") {
+                Text("Hello, \(savedPerson.email)! This is the main page!")
+            }
+
+            Text("Hello, \(email ?? "")! This is the main page!")
+                .padding()
+
+            Button(action: logout) {
+                Text("Logout")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
+        }
+    }
+
+    func logout() {
+        email = nil
     }
 }
 
