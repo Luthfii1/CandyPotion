@@ -12,6 +12,10 @@ struct MainView: View {
 
     var body: some View {
         VStack {
+            if let savedPerson = UserDefaults.standard.person(forKey: "person") {
+                Text("Hello, \(savedPerson.email)! This is the main page!")
+            }
+
             Text("Hello, \(email ?? "")! This is the main page!")
                 .padding()
 

@@ -13,10 +13,11 @@ struct LoginView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var token = ""
-    @State private var path = NavigationPath()
+    @State private var partnerID = ""
+    @ObservedObject private var person = PersonModel(name: "", email: "", dateCreated: "", partnerID: "", gender: GENDER(rawValue: "UNKNOWN")!, loveLanguage: LOVELANGUAGE(rawValue: "UNKNOWN")!, invitationCode: "", _id: "")
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             VStack {
                 Text("Welcome Back!")
                     .padding()
@@ -102,15 +103,22 @@ struct LoginView: View {
 
                 do {
                     let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+
                     DispatchQueue.main.async {
                         self.token = decodedResponse.result
 
                         UserDefaults.standard.set(self.email, forKey: "email")
                         UserDefaults.standard.set(self.token, forKey: "token")
+                        UserDefaults.standard.set(self.partnerID, forKey: "partnerID")
 
-                        self.getAccount(token: self.token)
-
-                        self.path.append("Home")
+                        person.getAccount(token: self.token) { success in
+                            if success {
+                                UserDefaults.standard.setPerson(self.person, forKey: "person")
+                            } else {
+                                self.alertMessage = "Failed to fetch account details"
+                                self.showAlert = true
+                            }
+                        }
                     }
                 } catch {
                     DispatchQueue.main.async {
@@ -125,39 +133,6 @@ struct LoginView: View {
                 self.showAlert = true
             }
         }
-    }
-
-    func getAccount(token: String) {
-        print("test")
-        guard let url = URL(string: "http://localhost:8000/account/getAccount") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            if let error = error {
-                print(error)
-                DispatchQueue.main.async {}
-                return
-            }
-
-            guard let data = data else {
-                DispatchQueue.main.async {
-                    print("no data received")
-                }
-                return
-            }
-
-            do {
-                print(data)
-                let decodedResponse = try JSONDecoder().decode(AccountResponse.self, from: data)
-                print(decodedResponse)
-            } catch {
-                DispatchQueue.main.async {
-                }
-            }
-        }.resume()
     }
 }
 

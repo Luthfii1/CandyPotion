@@ -29,7 +29,6 @@ struct RegisterView: View {
 
             Button {
                 submitFeedback()
-                print("HELLO")
             } label: {
                 ZStack {
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
@@ -72,6 +71,8 @@ struct RegisterView: View {
             request.httpBody = jsonData
 
             URLSession.shared.dataTask(with: request) { _, response, error in
+                print("HELLO3")
+
                 if let error = error {
                     DispatchQueue.main.async {
                         self.alertMessage = "Failed to send feedback: \(error.localizedDescription)"
@@ -81,14 +82,19 @@ struct RegisterView: View {
                 }
 
                 guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else {
+                    print("HELLO2")
+
                     DispatchQueue.main.async {
                         self.alertMessage = "Failed with status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)"
+                        print(response)
                         self.showAlert = true
                     }
                     return
                 }
 
                 DispatchQueue.main.async {
+                    print("HELLO")
+
                     self.alertMessage = "Feedback sent successfully!"
                     self.showAlert = true
                 }
