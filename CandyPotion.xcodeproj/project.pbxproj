@@ -17,6 +17,7 @@
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
 		9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980122C22A95D00388BE1 /* RegisterView.swift */; };
 		9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980142C23CCF000388BE1 /* LoginView.swift */; };
+		9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980162C2412E500388BE1 /* InputCodeView.swift */; };
 		DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */; };
 		DD9D163E2C1F4A3E0001FE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */; };
 		DD9D16412C1F4A3E0001FE44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D16402C1F4A3E0001FE44 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		9B8980122C22A95D00388BE1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9B8980142C23CCF000388BE1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9B8980162C2412E500388BE1 /* InputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
 		DD9D16362C1F4A3D0001FE44 /* CandyPotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyPotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyPotionApp.swift; sourceTree = "<group>"; };
 		DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				468A2FA12C241530005C825F /* QuestPage.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
+				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
 				DDBB7E0A2C1F5824003CD2CD /* PersonModel.swift in Sources */,
 				DDBB7E0F2C1F598D003CD2CD /* MainVM.swift in Sources */,
+				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
 				DDBB7E082C1F56A3003CD2CD /* TextFieldInput.swift in Sources */,
 				DDBB7E042C1F5515003CD2CD /* MainView.swift in Sources */,
