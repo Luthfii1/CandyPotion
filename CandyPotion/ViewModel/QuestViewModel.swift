@@ -8,9 +8,39 @@ import Foundation
 
 //Beberapa questnya masih blm sesuai karena ga dilakuin secara online
 class QuestViewModel: ObservableObject {
+    @Published var quests: [QuestPartner] = []
     @Published var loveLanguage: LoveLanguageModel = .wordsOfAffirmation
     
-    private let quests: [LoveLanguageModel: [String]] = [
+    init() {
+        fetchQuests()
+    }
+    
+    func fetchQuests() {
+        guard let url = URL(string: "https://mc2-be.vercel.app/log/getValidatingQuest/6674ef2d9c4cd0231d9ace69") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("Error fetching quests: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                print("No data received")
+                return
+            }
+            
+            do {
+                let decodedResponse = try JSONDecoder().decode(QuestPartnerResponse.self, from: data)
+                DispatchQueue.main.async {
+                    self.quests = decodedResponse.result
+                }
+            } catch {
+                print("Error decoding response: \(error)")
+            }
+        }.resume()
+    }
+    
+    private let personQuests: [LoveLanguageModel: [String]] = [
         .wordsOfAffirmation: [
             "Write a heartfelt love letter to your partner.",
             "Compliment your partner's appearance today.",
@@ -174,6 +204,24 @@ class QuestViewModel: ObservableObject {
     ]
     
     func getRandomQuest(for loveLanguage: LoveLanguageModel) -> String {
-        quests[loveLanguage]?.randomElement() ?? "Have a wonderful day!"
+        personQuests[loveLanguage]?.randomElement() ?? "Have a wonderful day!"
+    }
+}
+
+struct QuestPartnerResponse: Decodable {
+    let messages: String
+    let result: [QuestPartner]
+}
+
+struct QuestPartner: Decodable, Identifiable {
+    let _id: String
+    let assignUser: [String]
+    let isCompleted: Bool
+    let type: String
+    let description: String
+    let dateQuest: String
+    
+    var id: String {
+        _id
     }
 }

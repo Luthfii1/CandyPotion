@@ -14,7 +14,7 @@ struct CandyPotionApp: App {
     var body: some Scene {
         WindowGroup {
             if email == nil {
-                LoginView()
+                MainView(email: "Al")
             } else {
                 MainView(email: email ?? "")
             }

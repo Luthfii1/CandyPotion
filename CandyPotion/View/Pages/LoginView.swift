@@ -66,6 +66,7 @@ struct LoginView: View {
         do {
             let jsonData = try JSONEncoder().encode(feedback)
             request.httpBody = jsonData
+            print("hsobdata: ", jsonData)
 
             URLSession.shared.dataTask(with: request) { data, _, error in
 
@@ -81,6 +82,7 @@ struct LoginView: View {
                     print("NO data received")
                     return
                 }
+                print("data", data)
 
                 do {
                     let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
@@ -89,10 +91,10 @@ struct LoginView: View {
                         print("Token: \(decodedResponse.result)")
                     }
 
-                    UserDefaults.standard.set(email, forKey: "email")
-
-                    print(UserDefaults.standard.string(forKey: "email"))
-                    UserDefaults.standard.set(token, forKey: "token")
+//                    UserDefaults.standard.set(email, forKey: "email")
+//
+//                    print(UserDefaults.standard.string(forKey: "email"))
+//                    UserDefaults.standard.set(token, forKey: "token")
                 } catch {
                     print("Error decoding response: \(error)")
                 }
