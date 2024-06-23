@@ -12,6 +12,7 @@ struct CandyPotionApp: App {
     @AppStorage("email") var email: String?
     @AppStorage("token") var token: String?
     @AppStorage("partnerID") var partnerID: String?
+    @AppStorage("loveLanguage") var loveLanguage: String?
 
     var body: some Scene {
         WindowGroup {
@@ -21,9 +22,14 @@ struct CandyPotionApp: App {
             else if partnerID == "" {
                 InputCodeView()
             }
+            else if loveLanguage == "nil" {
+                InputLoveLanguage()
+            }
             else {
                 MainView()
             }
         }
     }
 }
+
+//Al Love Rasyad Always Foreveeerrrr

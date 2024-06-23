@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InputCodeView: View {
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+
     @State private var code: [String] = ["", "", "", ""]
     @State private var showAlert = false
     @State private var alertMessage = ""
@@ -74,6 +76,17 @@ struct InputCodeView: View {
         .alert(isPresented: $showAlert) {
             Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
+        .onReceive(timer) { _ in
+            person?.getAccount(token: self.token as! String) { success in
+                if success {
+                    UserDefaults.standard.setPerson(self.person!, forKey: "person")
+                    UserDefaults.standard.set(self.person!.partnerID, forKey: "partnerID")
+                } else {
+                    self.alertMessage = "Failed to fetch account details"
+                    self.showAlert = true
+                }
+            }
+        }
     }
 
     func verifyCode() {
@@ -86,7 +99,7 @@ struct InputCodeView: View {
         let enteredCode = code.joined()
         let inputCode = CodeRequest(inputCode: enteredCode)
 
-        guard let url = URL(string: "http://localhost:8000/account/updateAccount/\(id ?? "")") else { return }
+        guard let url = URL(string: "http://mc2-be.vercel.app/account/updateAccount/\(id ?? "")") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -127,7 +140,6 @@ struct InputCodeView: View {
                         }
                     }
 
-
                     DispatchQueue.main.async {}
                 } catch {
                     DispatchQueue.main.async {
@@ -142,16 +154,6 @@ struct InputCodeView: View {
                 self.showAlert = true
             }
         }
-
-//        let validCode = invitationCode
-//
-//        if enteredCode == validCode {
-//            alertMessage = "Code verified successfully"
-//            showAlert = true
-//        } else {
-//            alertMessage = "Invalid verification code"
-//            showAlert = true
-//        }
     }
 }
 

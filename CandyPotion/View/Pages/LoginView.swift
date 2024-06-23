@@ -24,10 +24,12 @@ struct LoginView: View {
 
                 VStack {
                     TextField("Email", text: $email)
+                        .autocapitalization(.none)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
 
                     SecureField("Password", text: $password)
+                        .autocapitalization(.none)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                 }
@@ -56,9 +58,9 @@ struct LoginView: View {
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
-            .navigationDestination(for: String.self) { _ in
-                InputCodeView()
-            }
+//            .navigationDestination(for: String.self) { _ in
+//                InputCodeView()
+//            }
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -75,7 +77,7 @@ struct LoginView: View {
     }
 
     func postFeedback(feedback: LoginFeedback) {
-        guard let url = URL(string: "http://localhost:8000/auth/login") else { return }
+        guard let url = URL(string: "http://mc2-be.vercel.app/auth/login") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

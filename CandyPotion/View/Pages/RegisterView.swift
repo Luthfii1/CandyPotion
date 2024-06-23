@@ -22,9 +22,15 @@ struct RegisterView: View {
 
             VStack {
                 TextField("Name", text: $name)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Email", text: $email)
+                    .autocapitalization(.none)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Password", text: $password)
+                    .autocapitalization(.none)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 TextField("Gender", text: $gender)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }.padding(.horizontal)
 
             Button {
@@ -61,7 +67,7 @@ struct RegisterView: View {
     }
 
     func postFeedback(feedback: Feedback) {
-        guard let url = URL(string: "http://localhost:8000/auth/register") else { return }
+        guard let url = URL(string: "http://mc2-be.vercel.app/auth/register") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
