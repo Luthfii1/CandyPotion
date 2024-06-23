@@ -21,6 +21,8 @@
 		DD429AEA2C283A3100256406 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AE92C283A3100256406 /* Person.swift */; };
 		DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEB2C283A9E00256406 /* LoginVM.swift */; };
 		DD429AEE2C286C3F00256406 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AED2C286C3F00256406 /* API.swift */; };
+		DD429AF02C2892EC00256406 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEF2C2892EC00256406 /* RegisterVM.swift */; };
+		DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */; };
 		DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */; };
 		DD9D163E2C1F4A3E0001FE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */; };
 		DD9D16412C1F4A3E0001FE44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D16402C1F4A3E0001FE44 /* Preview Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		DD429AE92C283A3100256406 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DD429AEB2C283A9E00256406 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		DD429AED2C286C3F00256406 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DD429AEF2C2892EC00256406 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterStruct.swift; sourceTree = "<group>"; };
 		DD9D16362C1F4A3D0001FE44 /* CandyPotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyPotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyPotionApp.swift; sourceTree = "<group>"; };
 		DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				9B89800E2C22860200388BE1 /* AchievementModel.swift */,
 				9B8980102C22866F00388BE1 /* BadgeModel.swift */,
 				DD429AE92C283A3100256406 /* Person.swift */,
+				DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				DDBB7E0E2C1F598D003CD2CD /* MainVM.swift */,
 				468A2F9B2C2406F5005C825F /* QuestViewModel.swift */,
 				DD429AEB2C283A9E00256406 /* LoginVM.swift */,
+				DD429AEF2C2892EC00256406 /* RegisterVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */,
 				9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */,
 				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
+				DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */,
 				DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */,
 				DDBB7E0A2C1F5824003CD2CD /* PersonModel.swift in Sources */,
 				DDBB7E0F2C1F598D003CD2CD /* MainVM.swift in Sources */,
@@ -253,6 +260,7 @@
 				9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */,
 				9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */,
 				DDBB7E062C1F5657003CD2CD /* String+Extension.swift in Sources */,
+				DD429AF02C2892EC00256406 /* RegisterVM.swift in Sources */,
 				DD429AEE2C286C3F00256406 /* API.swift in Sources */,
 				DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */,
 				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,

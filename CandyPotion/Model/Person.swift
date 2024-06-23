@@ -7,34 +7,12 @@
 
 import Foundation
 
-enum GENDER: String, Codable {
+enum GENDER: String, Codable, CaseIterable {
     case MALE, FEMALE, UNKNOWN
 }
 
 enum LOVELANGUAGE: String, Codable {
     case ACTS_OF_SERVICE, WORDS_OF_AFFIRMATION, PHYSICAL_TOUCH, RECEIVING_GIFTS, QUALITY_TIME, UNKNOWN
-}
-
-struct InputLogin: Codable {
-    var email: String
-    var password: String
-}
-
-struct LoginResponse: Decodable {
-    let messages: String
-    let result: String
-}
-
-struct AccountResponse: Decodable {
-    var _id: String?
-    var name: String?
-    var email: String?
-    var dateCreated: String?
-    var password: String?
-    var partnerID: String?
-    var gender: String?
-    var loveLanguage: String?
-    var invitationCode: String?
 }
 
 class Person: ObservableObject, Codable, Identifiable {

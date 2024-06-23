@@ -16,7 +16,7 @@ struct CandyPotionApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if email == nil {
+            if token == nil {
                 LoginView()
                     .environmentObject(loginVM)
             } else if partnerID == "" {

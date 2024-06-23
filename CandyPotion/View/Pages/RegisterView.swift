@@ -8,111 +8,94 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var name = ""
-    @State private var email = ""
-    @State private var password = ""
-    @State private var gender = ""
-
-    @State private var showAlert = false
-    @State private var alertMessage = ""
-
+    @StateObject private var registerVM = RegisterVM()
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
+        //        if registerVM.condition.isFinished {
+        //            presentationMode.wrappedValue.dismiss()
+        //        }
+        //
         NavigationStack {
-            Text("Let me know you")
-
-            VStack {
-                TextField("Name", text: $name)
-                TextField("Email", text: $email)
-                TextField("Password", text: $password)
-                TextField("Gender", text: $gender)
-            }.padding(.horizontal)
-
-            Button {
-                submitFeedback()
-            } label: {
-                ZStack {
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                        .frame(height: 46)
+            ZStack {
+                VStack {
+                    Text("Let me know you")
+                    
+                    VStack {
+                        TextField("Name", text: $registerVM.input.name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                        TextField("Email", text: $registerVM.input.email)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                        SecureField("Password", text: $registerVM.input.password)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(.horizontal)
+                        
+                        Picker("Gender", selection: $registerVM.input.gender) {
+                            ForEach(GENDER.allCases, id: \.self) { gender in
+                                Text(gender.rawValue.capitalized).tag(gender)
+                            }
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
                         .padding(.horizontal)
-                        .foregroundColor(.gray)
-                    Text("Register").foregroundStyle(.white)
+                    }
+                    .padding()
+                    
+                    Button {
+                        registerVM.submitFeedback()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                                .frame(height: 46)
+                                .padding(.horizontal)
+                                .foregroundColor(registerVM.condition.isLoading ? .gray : .blue)
+                            Text("Register")
+                                .foregroundStyle(.white)
+                        }
+                    }
+                    .disabled(registerVM.condition.isLoading)
+                    
+                    HStack {
+                        Text("Already have an account?")
+                        Button("Log In") {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    }
+                }
+                .alert(isPresented: $registerVM.condition.showAlert) {
+                    Alert(title: Text("Failed to Register"), message: Text(registerVM.condition.alertMessage), dismissButton: .default(Text("OK")))
+                }
+                
+                if (registerVM.condition.isLoading) {
+                    VStack {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .scaleEffect(2)
+                            .padding(.top, 20)
+                        
+                        Text("Please wait")
+                            .padding(.top, 30)
+                    }
+                    .padding(20)
+                    .background(.white)
+                    .cornerRadius(25)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
                 }
             }
-
-            HStack {
-                Text("Already have an account?")
-                NavigationLink(destination: LoginView()) {
-                    Text("Log In")
-                }
-            }
-        }.navigationBarBackButtonHidden()
-    }
-
-    func submitFeedback() {
-        guard !name.isEmpty else {
-            alertMessage = "Please fill in all fields"
-            showAlert = true
-            print("ERROR")
-            return
         }
-
-        let feedbackData = Feedback(name: name, email: email, password: password, gender: gender)
-        postFeedback(feedback: feedbackData)
-    }
-
-    func postFeedback(feedback: Feedback) {
-        guard let url = URL(string: "http://localhost:8000/auth/register") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        do {
-            let jsonData = try JSONEncoder().encode(feedback)
-            request.httpBody = jsonData
-
-            URLSession.shared.dataTask(with: request) { _, response, error in
-                print("HELLO3")
-
-                if let error = error {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Failed to send feedback: \(error.localizedDescription)"
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 else {
-                    print("HELLO2")
-
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Failed with status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)"
-                        print(response ?? "anything")
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                DispatchQueue.main.async {
-                    print("HELLO")
-
-                    self.alertMessage = "Feedback sent successfully!"
-                    self.showAlert = true
-                }
-            }.resume()
-        } catch {
-            DispatchQueue.main.async {
-                self.alertMessage = "Failed to encode feedback"
-                self.showAlert = true
+        .navigationBarBackButtonHidden(true)
+        .onChange(of: registerVM.condition.isFinished) { oldVal, isFinished in
+            if isFinished {
+                presentationMode.wrappedValue.dismiss()
             }
         }
     }
-}
-
-struct Feedback: Codable {
-    var name: String
-    var email: String
-    var password: String
-    var gender: String
 }
 
 #Preview {

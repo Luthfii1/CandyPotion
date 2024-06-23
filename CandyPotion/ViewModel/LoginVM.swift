@@ -64,24 +64,19 @@ class LoginVM: ObservableObject {
                 
                 // Do catch for get result from json to class
                 do {
-                    if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                       let message = jsonResponse["message"] as? String {
-                        DispatchQueue.main.async {
-                            print("error: \(message)")
-                            self.alertMessage = message
+                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    // check if succes or not with check the value of result
+                    DispatchQueue.main.async {
+                        if let token = decodedResponse.result {
+                            self.token = token
+                            UserDefaults.standard.set(self.token, forKey: "token")
+                            self.alertMessage = decodedResponse.message
+                            self.showAlert = true
+                            self.isLoggedIn = true
+                        } else {
+                            self.alertMessage = decodedResponse.message
                             self.showAlert = true
                         }
-                        return
-                    }
-                    
-                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-                    
-                    DispatchQueue.main.async {
-                        // dapet token dari result
-                        self.token = decodedResponse.result
-                        self.isLoggedIn = true
-                        // save ke userdefault token
-                        UserDefaults.standard.set(self.token, forKey: "token")
                     }
                 } catch {
                     // catch kalo error pas lagi decode from json to
