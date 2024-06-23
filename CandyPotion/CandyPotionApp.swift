@@ -31,5 +31,3 @@ struct CandyPotionApp: App {
         }
     }
 }
-
-//Al Love Rasyad Always Foreveeerrrr
