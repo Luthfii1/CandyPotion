@@ -1,15 +1,8 @@
-//
-//  MainView.swift
-//  CandyPotion
-//
-//  Created by Luthfi Misbachul Munir on 17/06/24.
-//
-
 import SwiftUI
 
 struct MainView: View {
     @State var email: String
-    @State private var showTodayQuest = false // State variable to control the sheet presentation
+    @State private var showTodayQuest = false
     
     var body: some View {
         ZStack {
@@ -17,14 +10,12 @@ struct MainView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
-            
-            VStack {
-                Spacer()
-            }
         }
         .sheet(isPresented: $showTodayQuest) {
-            TodayQuestView()
-                .presentationDetents([.fraction(0.25), .medium, .large])
+            TodayQuestView(presentationMode: $showTodayQuest)
+                .background(Color(red: 1, green: 0.96, blue: 0.95))
+                .presentationDetents([.fraction(0.10), .fraction(0.60)])
+                .interactiveDismissDisabled(true) // Disable interactive dismissal
         }
         .onAppear {
             showTodayQuest = true
@@ -33,13 +24,42 @@ struct MainView: View {
 }
 
 struct TodayQuestView: View {
+    @Binding var presentationMode: Bool
+    @State private var dragOffset: CGFloat = 0.0
+    
     var body: some View {
-        VStack {
-            Text("Today's Quest")
-                .font(Font.custom("Mali-Bold", size: 36))
-                .padding(.top, 24)
-            Spacer()
+        GeometryReader { geometry in
+            VStack {
+                Text("Today Quest")
+                    .font(.custom("Mali-Bold", size: 24))
+                    .padding(.top, 20)
+                
+                QuestView()
+                    .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
+                
+                Text("This Week’s Quest")
+                    .font(.custom("Mali-Bold", size: 24))
+                
+                QuestView()
+                
+                
+                Spacer()
+            }
+            .background(Color(red: 1, green: 0.96, blue: 0.95))
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        dragOffset = value.translation.height
+                    }
+                    .onEnded { value in
+                        if dragOffset > geometry.size.height / 4 {
+                            presentationMode = false
+                        }
+                        dragOffset = 0.0
+                    }
+            )
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

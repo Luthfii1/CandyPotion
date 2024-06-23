@@ -91,10 +91,10 @@ struct LoginView: View {
                         print("Token: \(decodedResponse.result)")
                     }
 
-//                    UserDefaults.standard.set(email, forKey: "email")
-//
-//                    print(UserDefaults.standard.string(forKey: "email"))
-//                    UserDefaults.standard.set(token, forKey: "token")
+                    UserDefaults.standard.set(email, forKey: "email")
+
+                    print(UserDefaults.standard.string(forKey: "email"))
+                    UserDefaults.standard.set(token, forKey: "token")
                 } catch {
                     print("Error decoding response: \(error)")
                 }

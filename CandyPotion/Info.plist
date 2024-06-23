@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Mali-Bold.ttf</string>
+		<string>Mali-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
