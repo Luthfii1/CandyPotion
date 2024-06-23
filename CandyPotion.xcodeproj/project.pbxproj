@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3916472C28247700082A07 /* InputLoveLanguage.swift */; };
+		9B3916562C285E6600082A07 /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164A2C285E6600082A07 /* Mali-Regular.ttf */; };
+		9B3916572C285E6600082A07 /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */; };
+		9B3916582C285E6600082A07 /* Mali-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164C2C285E6600082A07 /* Mali-Medium.ttf */; };
+		9B3916592C285E6600082A07 /* Mali-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164D2C285E6600082A07 /* Mali-BoldItalic.ttf */; };
+		9B39165A2C285E6600082A07 /* Mali-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164E2C285E6600082A07 /* Mali-MediumItalic.ttf */; };
+		9B39165B2C285E6600082A07 /* Mali-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164F2C285E6600082A07 /* Mali-Light.ttf */; };
+		9B39165C2C285E6600082A07 /* Mali-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916502C285E6600082A07 /* Mali-Bold.ttf */; };
+		9B39165D2C285E6600082A07 /* Mali-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916512C285E6600082A07 /* Mali-Italic.ttf */; };
+		9B39165E2C285E6600082A07 /* Mali-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916522C285E6600082A07 /* Mali-SemiBold.ttf */; };
+		9B39165F2C285E6600082A07 /* Mali-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916532C285E6600082A07 /* Mali-ExtraLightItalic.ttf */; };
+		9B3916602C285E6600082A07 /* Mali-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */; };
+		9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
@@ -26,6 +38,19 @@
 
 /* Begin PBXFileReference section */
 		9B3916472C28247700082A07 /* InputLoveLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguage.swift; sourceTree = "<group>"; };
+		9B39164A2C285E6600082A07 /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
+		9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		9B39164C2C285E6600082A07 /* Mali-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Medium.ttf"; sourceTree = "<group>"; };
+		9B39164D2C285E6600082A07 /* Mali-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-BoldItalic.ttf"; sourceTree = "<group>"; };
+		9B39164E2C285E6600082A07 /* Mali-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9B39164F2C285E6600082A07 /* Mali-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Light.ttf"; sourceTree = "<group>"; };
+		9B3916502C285E6600082A07 /* Mali-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Bold.ttf"; sourceTree = "<group>"; };
+		9B3916512C285E6600082A07 /* Mali-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Italic.ttf"; sourceTree = "<group>"; };
+		9B3916522C285E6600082A07 /* Mali-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBold.ttf"; sourceTree = "<group>"; };
+		9B3916532C285E6600082A07 /* Mali-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-LightItalic.ttf"; sourceTree = "<group>"; };
+		9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9B3916622C285E9D00082A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
@@ -54,6 +79,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B3916492C285E4A00082A07 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9B3916502C285E6600082A07 /* Mali-Bold.ttf */,
+				9B39164D2C285E6600082A07 /* Mali-BoldItalic.ttf */,
+				9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */,
+				9B3916532C285E6600082A07 /* Mali-ExtraLightItalic.ttf */,
+				9B3916512C285E6600082A07 /* Mali-Italic.ttf */,
+				9B39164F2C285E6600082A07 /* Mali-Light.ttf */,
+				9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */,
+				9B39164C2C285E6600082A07 /* Mali-Medium.ttf */,
+				9B39164E2C285E6600082A07 /* Mali-MediumItalic.ttf */,
+				9B39164A2C285E6600082A07 /* Mali-Regular.ttf */,
+				9B3916522C285E6600082A07 /* Mali-SemiBold.ttf */,
+				9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		DD9D162D2C1F4A3D0001FE44 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +117,8 @@
 		DD9D16382C1F4A3D0001FE44 /* CandyPotion */ = {
 			isa = PBXGroup;
 			children = (
+				9B3916622C285E9D00082A07 /* Info.plist */,
+				9B3916492C285E4A00082A07 /* Fonts */,
 				DDBB7E0D2C1F596F003CD2CD /* ViewModel */,
 				DDBB7E022C1F54F9003CD2CD /* Utils */,
 				DD9D16482C1F4B5D0001FE44 /* Model */,
@@ -206,8 +252,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B39165C2C285E6600082A07 /* Mali-Bold.ttf in Resources */,
+				9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */,
+				9B3916572C285E6600082A07 /* Mali-SemiBoldItalic.ttf in Resources */,
+				9B3916562C285E6600082A07 /* Mali-Regular.ttf in Resources */,
+				9B39165F2C285E6600082A07 /* Mali-ExtraLightItalic.ttf in Resources */,
+				9B39165D2C285E6600082A07 /* Mali-Italic.ttf in Resources */,
+				9B39165B2C285E6600082A07 /* Mali-Light.ttf in Resources */,
+				9B3916602C285E6600082A07 /* Mali-LightItalic.ttf in Resources */,
 				DD9D16412C1F4A3E0001FE44 /* Preview Assets.xcassets in Resources */,
+				9B3916582C285E6600082A07 /* Mali-Medium.ttf in Resources */,
+				9B3916592C285E6600082A07 /* Mali-BoldItalic.ttf in Resources */,
 				DD9D163E2C1F4A3E0001FE44 /* Assets.xcassets in Resources */,
+				9B39165A2C285E6600082A07 /* Mali-MediumItalic.ttf in Resources */,
+				9B39165E2C285E6600082A07 /* Mali-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +425,7 @@
 				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CandyPotion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,6 +456,7 @@
 				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CandyPotion/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -18,46 +18,94 @@ struct LoginView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Welcome Back!")
-                    .padding()
-
+            ZStack {
+                Color(.purpleCandy).ignoresSafeArea()
+                Image("background").resizable().opacity(0.5).ignoresSafeArea()
+                
                 VStack {
-                    TextField("Email", text: $email)
-                        .autocapitalization(.none)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
+                    Image("loginAssets").resizable().frame(width: 257, height: 373).offset(y: 24)
 
-                    SecureField("Password", text: $password)
-                        .autocapitalization(.none)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                }
+                    Text("Welcome Back!")
+                        .font(
+                            Font.custom("Mali-Bold", size: 32)
+                                .weight(.bold)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .offset(y: -12)
 
-                Button {
-                    login()
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                            .frame(height: 46)
-                            .padding(.horizontal)
-                            .foregroundColor(.gray)
-                        Text("Log In").foregroundStyle(.white)
+                    Text("Your presence matters,\nget back into Candylabs!")
+                        .font(
+                            Font.custom("Mali-Regular", size: 15)
+                                .weight(.medium)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .padding(.bottom)
+
+                    VStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                TextField("Email", text: $email)
+                                    .autocapitalization(.none)
+                                    .font(.custom("Mali-Regular", size: 18))
+                                    .padding(.horizontal)
+                            }
+                            .frame(width: 329)
+                        }
+                        
+                        Spacer().frame(height: 12)
+
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                SecureField("Password", text: $password)
+                                    .autocapitalization(.none)
+                                    .font(.custom("Mali-Regular", size: 18))
+                                    .padding(.horizontal)
+                            }
+                            .frame(width: 329)
+                        }
                     }
-                }
-                .padding(.top, 20)
 
-                HStack {
-                    Text("Do not have an account?")
-                    NavigationLink(destination: RegisterView()) {
-                        Text("Register")
+                    Spacer().frame(height: 32)
+
+                    Button {
+                        login()
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.clear)
+                                .frame(width: 329, height: 51)
+                                .background(Color(red: 0.56, green: 0.4, blue: 0.78))
+                                .cornerRadius(12)
+                            Text("Log in")
+                                .font(
+                                    Font.custom("Mali", size: 24)
+                                        .weight(.bold)
+                                )
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
                     }
+
+                    HStack {
+                        Text("Do not have an account?").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.79, green: 0.77, blue: 0.81))
+
+                        NavigationLink(destination: RegisterView()) {
+                            Text("Register").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
+                                .foregroundColor(.white).underline()
+                        }
+                    }
+                }.offset(y: -20)
+
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
                 }
-                .padding(.top, 20)
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
+
 //            .navigationDestination(for: String.self) { _ in
 //                InputCodeView()
 //            }
