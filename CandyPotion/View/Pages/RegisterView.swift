@@ -86,7 +86,7 @@ struct RegisterView: View {
 
                     DispatchQueue.main.async {
                         self.alertMessage = "Failed with status code: \((response as? HTTPURLResponse)?.statusCode ?? -1)"
-                        print(response)
+                        print(response ?? "anything")
                         self.showAlert = true
                     }
                     return
