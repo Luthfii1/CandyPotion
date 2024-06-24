@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct InputCodeView: View {
-    @EnvironmentObject private var getAccountVM: GetAccountVM
     @EnvironmentObject private var inputCodeVM: InputCodeVM
     @FocusState private var focusedField: Int?
     
@@ -30,6 +27,9 @@ struct InputCodeView: View {
             .alert(isPresented: $inputCodeVM.condition.showAlert) {
                 Alert(title: Text("Message"), message: Text(inputCodeVM.condition.alertMessage), dismissButton: .default(Text("OK")))
             }
+        }
+        .onReceive(inputCodeVM.timer) { _ in
+            inputCodeVM.getAccount()
         }
         .onAppear{
             inputCodeVM.getAccount()
@@ -92,7 +92,7 @@ struct InputCodeView: View {
                     .foregroundColor(.white)
                     .focused($focusedField, equals: index)
                     .onChange(of: inputCodeVM.code[index]) { oldValue, newValue in
-                        handleCodeChange(at: index, newValue: newValue)
+                        handleCodeChange(at: index, newValue: newValue.uppercased())
                     }
             }
         }
@@ -138,31 +138,34 @@ struct InputCodeView: View {
     }
     
     private func handleCodeChange(at index: Int, newValue: String) {
-        if newValue.count > 1 {
-            inputCodeVM.code[index] = String(newValue.prefix(1))
+        let uppercasedValue = newValue.uppercased()
+        if uppercasedValue.count > 1 {
+            inputCodeVM.code[index] = String(uppercasedValue.prefix(1))
+        } else {
+            inputCodeVM.code[index] = uppercasedValue
         }
-        if newValue.count == 1 {
+        if uppercasedValue.count == 1 {
             if index < 3 {
                 focusedField = index + 1
             } else {
                 focusedField = nil
                 inputCodeVM.verifyCode()
             }
-        } else if newValue.isEmpty {
+        } else if uppercasedValue.isEmpty {
             if index > 0 {
                 focusedField = index - 1
             }
         }
         
         if inputCodeVM.code.joined().count == 4 {
-            let enteredCode = inputCodeVM.code.joined()
+            let enteredCode = inputCodeVM.code.joined().uppercased()
             if enteredCode == UserDefaults.standard.string(forKey: "invitationCode") {
                 inputCodeVM.condition.alertMessage = "You can't add yourself as a partner"
                 inputCodeVM.condition.showAlert = true
             } else {
                 print("success add partner")
-//                inputCodeVM.condition.alertMessage = "Success add partner"
-//                inputCodeVM.condition.showAlert = true
+                // Call verifyCode method to process the entered code
+                inputCodeVM.verifyCode()
             }
         }
     }
@@ -171,5 +174,4 @@ struct InputCodeView: View {
 #Preview {
     InputCodeView()
         .environmentObject(InputCodeVM())
-        .environmentObject(GetAccountVM())
 }

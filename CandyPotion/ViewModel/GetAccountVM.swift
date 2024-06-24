@@ -8,11 +8,11 @@
 import Foundation
 
 class GetAccountVM: ObservableObject {
-    @Published var person: Person
+    @Published var person: PersonModel
     @Published var condition: Conditions
     
     init() {
-        self.person = Person()
+        self.person = PersonModel()
         self.condition = Conditions()
     }
     
@@ -85,12 +85,11 @@ class GetAccountVM: ObservableObject {
                         }
                         
                         if let loveLanguage = result.loveLanguage {
-                            UserDefaults.standard.set(loveLanguage, forKey: "loveLanguage")
+                            UserDefaults.standard.set(loveLanguage.rawValue, forKey: "loveLanguage")
                             print("Lovelang: ", loveLanguage)
                         } else {
-                            print("lovelang is nil")
+                            print("lovelang is nil : ", UserDefaults.standard.string(forKey: "loveLanguage") ?? "no lovelang")
                         }
-                        
                         self.condition.isFinished = true
                         completion(true)
                     } else {

@@ -19,7 +19,7 @@ struct LoginResponse: Decodable {
 
 struct GetAccountResponse: Decodable {
     let message: String
-    let result: Person?
+    let result: PersonModel?
     // here PERSON
 }
 
@@ -45,7 +45,7 @@ struct InputRegister: Codable {
 struct RegisterResponse: Decodable {
     let message: String
     // HERE PERSON
-    let result: Person?
+    let result: PersonModel?
 }
 
 struct Conditions {

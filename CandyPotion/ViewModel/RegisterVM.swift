@@ -85,7 +85,7 @@ class RegisterVM: ObservableObject {
                             self.condition.alertMessage = decodedResponse.message
                             self.condition.showAlert = true
                             self.condition.isFinished = true
-//                            self.condition.isFinished.toggle() 
+//                            self.condition.isFinished.toggle()
                         } else {
                             self.condition.alertMessage = decodedResponse.message
                             self.condition.showAlert = true

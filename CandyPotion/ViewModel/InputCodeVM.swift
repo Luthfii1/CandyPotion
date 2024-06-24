@@ -10,8 +10,12 @@ import Foundation
 class InputCodeVM: ObservableObject {
     @Published var condition: Conditions
     @Published var code: [String] = ["", "", "", ""]
-    @Published var timer = Timer.publish(every: 2, on: .main, in: .common)
+    @Published var timer = Timer.publish(every: 1, on: .main, in: .common)
         .autoconnect()
+    
+    var idUser: String {
+        UserDefaults.standard.string(forKey: "_id")!
+    }
     
     init() {
         self.condition = Conditions()
@@ -25,12 +29,13 @@ class InputCodeVM: ObservableObject {
             return
         }
         
-        // join into string for all codes
-        let enteredCode = code.joined()
+        // join into string for all codes and convert to uppercase
+        let enteredCode = code.map{ $0.uppercased() }.joined()
         let inputCode = CodeRequest(inputCode: enteredCode)
+        print("inputcode: ", inputCode)
         
         // API request, set header, and set method
-        guard let url = URL(string: "\(APITest)/account/updateAccount/\(String(describing: UserDefaults.standard.string(forKey: "_id")))") else { return }
+        guard let url = URL(string: "\(APITest)/account/updateAccount/\(idUser)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -119,5 +124,5 @@ struct CodeRequest: Codable {
 
 struct CodeResponse: Decodable {
     var message: String
-    var result: Person? // Succeed only
+    var result: PersonModel? // Succeed only
 }

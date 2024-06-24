@@ -8,12 +8,12 @@
 import Foundation
 
 class LoginVM: ObservableObject {
-    @Published var person: Person
+    @Published var person: PersonModel
     @Published var input: InputLogin
     @Published var condition: Conditions
     
     init() {
-        self.person = Person()
+        self.person = PersonModel()
         self.input = InputLogin()
         self.condition = Conditions()
     }
