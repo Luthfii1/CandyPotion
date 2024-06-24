@@ -38,6 +38,7 @@
 		468A2FBB2C2828E8005C825F /* Mali-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAD2C2828E8005C825F /* Mali-SemiBold.ttf */; };
 		468A2FBC2C2828E8005C825F /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */; };
 		468A2FBD2C2828E8005C825F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAF2C2828E8005C825F /* OFL.txt */; };
+		468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
@@ -93,6 +94,7 @@
 		468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		468A2FAF2C2828E8005C825F /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyNotesView.swift; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
 				9B3916472C28247700082A07 /* InputLoveLanguage.swift */,
+				468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			files = (
 				468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */,
 				9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */,
+				468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */,
 				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
 				DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */,
 				DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */,

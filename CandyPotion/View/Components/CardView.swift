@@ -12,11 +12,13 @@ struct CardView: View {
             
             VStack {
                 HStack{
-                    Circle()
+                    Image("Candy Image Quest")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 86, height: 86, alignment: .leading)
                         .padding(.leading, 10)
                     
-                    
+//                    Candy Image Quest
                         
                     
                     VStack(alignment: .leading){
