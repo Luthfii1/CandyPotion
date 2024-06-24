@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Mali-Bold.ttf</string>
+		<string>Mali-Regular.ttf</string>
 		<string>Mali-BoldItalic.ttf</string>
 		<string>Mali-ExtraLight.ttf</string>
 		<string>Mali-ExtraLightItalic.ttf</string>

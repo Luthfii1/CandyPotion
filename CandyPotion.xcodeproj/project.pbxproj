@@ -24,7 +24,20 @@
 		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
 		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
 		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
-		468A2FA22C241530005C825F /* QuestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* QuestPage.swift */; };
+		468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* ValidateQuestView.swift */; };
+		468A2FB12C2828E8005C825F /* Mali-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA32C2828E8005C825F /* Mali-Bold.ttf */; };
+		468A2FB22C2828E8005C825F /* Mali-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA42C2828E8005C825F /* Mali-BoldItalic.ttf */; };
+		468A2FB32C2828E8005C825F /* Mali-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA52C2828E8005C825F /* Mali-ExtraLight.ttf */; };
+		468A2FB42C2828E8005C825F /* Mali-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA62C2828E8005C825F /* Mali-ExtraLightItalic.ttf */; };
+		468A2FB52C2828E8005C825F /* Mali-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA72C2828E8005C825F /* Mali-Italic.ttf */; };
+		468A2FB62C2828E8005C825F /* Mali-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA82C2828E8005C825F /* Mali-Light.ttf */; };
+		468A2FB72C2828E8005C825F /* Mali-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FA92C2828E8005C825F /* Mali-LightItalic.ttf */; };
+		468A2FB82C2828E8005C825F /* Mali-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAA2C2828E8005C825F /* Mali-Medium.ttf */; };
+		468A2FB92C2828E8005C825F /* Mali-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAB2C2828E8005C825F /* Mali-MediumItalic.ttf */; };
+		468A2FBA2C2828E8005C825F /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAC2C2828E8005C825F /* Mali-Regular.ttf */; };
+		468A2FBB2C2828E8005C825F /* Mali-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAD2C2828E8005C825F /* Mali-SemiBold.ttf */; };
+		468A2FBC2C2828E8005C825F /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */; };
+		468A2FBD2C2828E8005C825F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAF2C2828E8005C825F /* OFL.txt */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
@@ -65,7 +78,21 @@
 		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
-		468A2FA12C241530005C825F /* QuestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPage.swift; sourceTree = "<group>"; };
+		468A2FA12C241530005C825F /* ValidateQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateQuestView.swift; sourceTree = "<group>"; };
+		468A2FA32C2828E8005C825F /* Mali-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Bold.ttf"; sourceTree = "<group>"; };
+		468A2FA42C2828E8005C825F /* Mali-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-BoldItalic.ttf"; sourceTree = "<group>"; };
+		468A2FA52C2828E8005C825F /* Mali-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLight.ttf"; sourceTree = "<group>"; };
+		468A2FA62C2828E8005C825F /* Mali-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		468A2FA72C2828E8005C825F /* Mali-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Italic.ttf"; sourceTree = "<group>"; };
+		468A2FA82C2828E8005C825F /* Mali-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Light.ttf"; sourceTree = "<group>"; };
+		468A2FA92C2828E8005C825F /* Mali-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-LightItalic.ttf"; sourceTree = "<group>"; };
+		468A2FAA2C2828E8005C825F /* Mali-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Medium.ttf"; sourceTree = "<group>"; };
+		468A2FAB2C2828E8005C825F /* Mali-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-MediumItalic.ttf"; sourceTree = "<group>"; };
+		468A2FAC2C2828E8005C825F /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
+		468A2FAD2C2828E8005C825F /* Mali-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBold.ttf"; sourceTree = "<group>"; };
+		468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		468A2FAF2C2828E8005C825F /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
@@ -99,6 +126,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		468A2FB02C2828E8005C825F /* Mali */ = {
+			isa = PBXGroup;
+			children = (
+				468A2FA32C2828E8005C825F /* Mali-Bold.ttf */,
+				468A2FA42C2828E8005C825F /* Mali-BoldItalic.ttf */,
+				468A2FA52C2828E8005C825F /* Mali-ExtraLight.ttf */,
+				468A2FA62C2828E8005C825F /* Mali-ExtraLightItalic.ttf */,
+				468A2FA72C2828E8005C825F /* Mali-Italic.ttf */,
+				468A2FA82C2828E8005C825F /* Mali-Light.ttf */,
+				468A2FA92C2828E8005C825F /* Mali-LightItalic.ttf */,
+				468A2FAA2C2828E8005C825F /* Mali-Medium.ttf */,
+				468A2FAB2C2828E8005C825F /* Mali-MediumItalic.ttf */,
+				468A2FAC2C2828E8005C825F /* Mali-Regular.ttf */,
+				468A2FAD2C2828E8005C825F /* Mali-SemiBold.ttf */,
+				468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */,
+				468A2FAF2C2828E8005C825F /* OFL.txt */,
+			);
+			name = Mali;
+			path = ../../../../../Downloads/Mali;
 		9B3916492C285E4A00082A07 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +183,7 @@
 		DD9D16382C1F4A3D0001FE44 /* CandyPotion */ = {
 			isa = PBXGroup;
 			children = (
+				468A2FBE2C282910005C825F /* Info.plist */,
 				9B3916622C285E9D00082A07 /* Info.plist */,
 				9B3916492C285E4A00082A07 /* Fonts */,
 				DDBB7E0D2C1F596F003CD2CD /* ViewModel */,
@@ -186,7 +233,7 @@
 			children = (
 				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
 				468A2F972C240229005C825F /* QuestView.swift */,
-				468A2FA12C241530005C825F /* QuestPage.swift */,
+				468A2FA12C241530005C825F /* ValidateQuestView.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
@@ -207,6 +254,7 @@
 		DDBB7E022C1F54F9003CD2CD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				468A2FB02C2828E8005C825F /* Mali */,
 				DDBB7E052C1F5657003CD2CD /* String+Extension.swift */,
 				DD429AED2C286C3F00256406 /* API.swift */,
 			);
@@ -282,6 +330,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468A2FBD2C2828E8005C825F /* OFL.txt in Resources */,
+				468A2FB92C2828E8005C825F /* Mali-MediumItalic.ttf in Resources */,
+				468A2FB12C2828E8005C825F /* Mali-Bold.ttf in Resources */,
+				DD9D16412C1F4A3E0001FE44 /* Preview Assets.xcassets in Resources */,
+				468A2FB62C2828E8005C825F /* Mali-Light.ttf in Resources */,
+				468A2FBC2C2828E8005C825F /* Mali-SemiBoldItalic.ttf in Resources */,
+				468A2FB72C2828E8005C825F /* Mali-LightItalic.ttf in Resources */,
+				468A2FB22C2828E8005C825F /* Mali-BoldItalic.ttf in Resources */,
+				468A2FBA2C2828E8005C825F /* Mali-Regular.ttf in Resources */,
+				468A2FB42C2828E8005C825F /* Mali-ExtraLightItalic.ttf in Resources */,
+				468A2FB32C2828E8005C825F /* Mali-ExtraLight.ttf in Resources */,
+				DD9D163E2C1F4A3E0001FE44 /* Assets.xcassets in Resources */,
+				468A2FB82C2828E8005C825F /* Mali-Medium.ttf in Resources */,
+				468A2FB52C2828E8005C825F /* Mali-Italic.ttf in Resources */,
+				468A2FBB2C2828E8005C825F /* Mali-SemiBold.ttf in Resources */,
 				9B39165C2C285E6600082A07 /* Mali-Bold.ttf in Resources */,
 				9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */,
 				9B3916572C285E6600082A07 /* Mali-SemiBoldItalic.ttf in Resources */,
@@ -328,7 +391,7 @@
 				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
 				468A2F982C240229005C825F /* QuestView.swift in Sources */,
 				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
-				468A2FA22C241530005C825F /* QuestPage.swift in Sources */,
+				468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
