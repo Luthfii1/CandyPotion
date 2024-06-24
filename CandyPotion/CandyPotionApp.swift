@@ -9,14 +9,25 @@ import SwiftUI
 
 @main
 struct CandyPotionApp: App {
+    @StateObject private var loginVM = LoginVM()
     @AppStorage("email") var email: String?
+    @AppStorage("token") var token: String?
+    @AppStorage("partnerID") var partnerID: String?
+    @AppStorage("loveLanguage") var loveLanguage: String?
 
     var body: some Scene {
         WindowGroup {
-            if email == nil {
-                MainView(email: "Al")
-            } else {
-                MainView(email: email ?? "")
+            if token == nil {
+                LoginView()
+                    .environmentObject(loginVM)
+            } else if partnerID == "" {
+                InputCodeView()
+            }
+            else if loveLanguage == "nil" {
+                InputLoveLanguage()
+            }
+            else {
+                MainView()
             }
         }
     }

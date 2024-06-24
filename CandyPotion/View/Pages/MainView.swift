@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @State var email: String
     @State private var showTodayQuest = false
+    @AppStorage("email") var email: String?
     
     var body: some View {
         ZStack {
@@ -10,6 +11,14 @@ struct MainView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
+            
+            Button(action: logout) {
+                Text("Logout")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(8)
+            }
         }
         .sheet(isPresented: $showTodayQuest) {
             TodayQuestView(presentationMode: $showTodayQuest)
@@ -60,9 +69,13 @@ struct TodayQuestView: View {
             )
         }
         .edgesIgnoringSafeArea(.all)
+
+
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "token")
     }
 }
 
 #Preview {
-    MainView(email: "AL")
+    MainView()
 }
