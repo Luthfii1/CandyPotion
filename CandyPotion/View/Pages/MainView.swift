@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var email: String
     @State private var showTodayQuest = false
     @AppStorage("email") var email: String?
     
@@ -29,6 +28,10 @@ struct MainView: View {
         .onAppear {
             showTodayQuest = true
         }
+    }
+    
+    func logout() {
+        UserDefaults.standard.removeObject(forKey: "token")
     }
 }
 
@@ -69,10 +72,6 @@ struct TodayQuestView: View {
             )
         }
         .edgesIgnoringSafeArea(.all)
-
-
-    func logout() {
-        UserDefaults.standard.removeObject(forKey: "token")
     }
 }
 
