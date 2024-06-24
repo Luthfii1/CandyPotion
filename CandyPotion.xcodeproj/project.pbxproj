@@ -21,6 +21,7 @@
 		9B3916602C285E6600082A07 /* Mali-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */; };
 		9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */; };
 		468A2F982C240229005C825F /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* QuestView.swift */; };
+		468A2F982C240229005C825F /* DailyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* DailyQuestView.swift */; };
 		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
 		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
 		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
@@ -39,6 +40,7 @@
 		468A2FBC2C2828E8005C825F /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAE2C2828E8005C825F /* Mali-SemiBoldItalic.ttf */; };
 		468A2FBD2C2828E8005C825F /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 468A2FAF2C2828E8005C825F /* OFL.txt */; };
 		468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */; };
+		468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC12C29C138005C825F /* WeeklyQuestView.swift */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
@@ -76,6 +78,7 @@
 		9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9B3916622C285E9D00082A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		468A2F972C240229005C825F /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
+		468A2F972C240229005C825F /* DailyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestView.swift; sourceTree = "<group>"; };
 		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		468A2FAF2C2828E8005C825F /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyNotesView.swift; sourceTree = "<group>"; };
+		468A2FC12C29C138005C825F /* WeeklyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuestView.swift; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
@@ -235,13 +239,14 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
-				468A2F972C240229005C825F /* QuestView.swift */,
+				468A2F972C240229005C825F /* DailyQuestView.swift */,
 				468A2FA12C241530005C825F /* ValidateQuestView.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
 				9B3916472C28247700082A07 /* InputLoveLanguage.swift */,
 				468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */,
+				468A2FC12C29C138005C825F /* WeeklyQuestView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 				DDBB7E0F2C1F598D003CD2CD /* MainVM.swift in Sources */,
 				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* Person.swift in Sources */,
+				468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
 				DDBB7E082C1F56A3003CD2CD /* TextFieldInput.swift in Sources */,
 				DDBB7E042C1F5515003CD2CD /* MainView.swift in Sources */,
@@ -394,7 +400,7 @@
 				DD429AEE2C286C3F00256406 /* API.swift in Sources */,
 				DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */,
 				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
-				468A2F982C240229005C825F /* QuestView.swift in Sources */,
+				468A2F982C240229005C825F /* DailyQuestView.swift in Sources */,
 				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
 				468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */,
 			);

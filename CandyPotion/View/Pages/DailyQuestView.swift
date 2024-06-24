@@ -1,19 +1,19 @@
 // QuestView.swift
-// QuestView.swift
 import SwiftUI
 
-struct QuestView: View {
+struct DailyQuestView: View {
     @StateObject private var viewModel = QuestViewModel()
     @State private var selectedQuest: String = ""
     @State private var selectedQuestId: String = ""
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
+    @Binding var dayCounter: Int
     
     var body: some View {
         VStack {
             if !selectedQuest.isEmpty {
                 HStack {
-                    CardView(quest: selectedQuest)
+                    CardView(quest: selectedQuest, dayCounter: $dayCounter)
                 }
             }
             
@@ -99,6 +99,6 @@ struct QuestResponse: Decodable {
 }
 
 #Preview {
-    QuestView()
+    DailyQuestView(dayCounter: .constant(0))
 }
 

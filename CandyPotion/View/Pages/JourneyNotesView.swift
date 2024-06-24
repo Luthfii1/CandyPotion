@@ -76,13 +76,13 @@ struct JourneyNotesView: View {
                         
                         
                         
-                        QuestView()
-                        
-                        QuestView()
-                        
-                        QuestView()
-                        
-                        QuestView()
+//                        QuestView()
+//                        
+//                        QuestView()
+//                        
+//                        QuestView()
+//                        
+//                        QuestView()
                         
                         Spacer()
                     }
