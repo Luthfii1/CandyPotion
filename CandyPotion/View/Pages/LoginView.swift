@@ -12,10 +12,14 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
+            
             if (loginVM.isLoggedIn) {
                 InputCodeView()
             } else {
                 ZStack {
+                    Color(.purpleCandy).ignoresSafeArea()
+                    Image("background").resizable().opacity(0.5).ignoresSafeArea()
+                    
                     VStack {
                         Text("Welcome Back!")
                             .padding()
@@ -78,7 +82,6 @@ struct LoginView: View {
                         )
                     }
                 }
-                
             }
         }
         .navigationBarBackButtonHidden(true)

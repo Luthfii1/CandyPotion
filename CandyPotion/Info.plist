@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Mali-Bold.ttf</string>
+		<string>Mali-BoldItalic.ttf</string>
+		<string>Mali-ExtraLight.ttf</string>
+		<string>Mali-ExtraLightItalic.ttf</string>
+		<string>Mali-Italic.ttf</string>
+		<string>Mali-Light.ttf</string>
+		<string>Mali-LightItalic.ttf</string>
+		<string>Mali-Medium.ttf</string>
+		<string>Mali-MediumItalic.ttf</string>
+		<string>Mali-Regular.ttf</string>
+		<string>Mali-SemiBold.ttf</string>
+		<string>Mali-SemiBoldItalic.ttf</string>
+	</array>
+</dict>
+</plist>
