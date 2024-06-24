@@ -19,25 +19,29 @@ class Person: ObservableObject, Codable, Identifiable {
     @Published var _id: String
     @Published var name: String
     @Published var email: String
-    @Published var dateCreated: String
-    @Published var partnerID: String
+    @Published var password: String
     @Published var gender: GENDER
-    @Published var loveLanguage: LOVELANGUAGE
     @Published var invitationCode: String
+    @Published var dateCreated: String
+    @Published var partnerID: String?
+    @Published var loveLanguage: LOVELANGUAGE?
+    @Published var __v: Int
     
     enum CodingKeys: String, CodingKey {
-        case _id, name, email, dateCreated, partnerID, gender, loveLanguage, invitationCode
+        case _id, name, email, password, gender, invitationCode, dateCreated, partnerID, loveLanguage, __v
     }
     
-    init(_id: String = "", name: String = "", email: String = "", dateCreated: String = "", partnerID: String = "", gender: GENDER = .UNKNOWN, loveLanguage: LOVELANGUAGE = .UNKNOWN, invitationCode: String = "") {
+    init(_id: String = "", name: String = "", email: String = "", password: String = "", gender: GENDER = .UNKNOWN, invitationCode: String = "", dateCreated: String = "", partnerID: String? = nil, loveLanguage: LOVELANGUAGE = .UNKNOWN, __v: Int = 0) {
         self._id = _id
         self.name = name
         self.email = email
+        self.password = password
+        self.gender = gender
+        self.invitationCode = invitationCode
         self.dateCreated = dateCreated
         self.partnerID = partnerID
-        self.gender = gender
         self.loveLanguage = loveLanguage
-        self.invitationCode = invitationCode
+        self.__v = __v
     }
     
     required init(from decoder: Decoder) throws {
@@ -45,11 +49,13 @@ class Person: ObservableObject, Codable, Identifiable {
         _id = try container.decode(String.self, forKey: ._id)
         name = try container.decode(String.self, forKey: .name)
         email = try container.decode(String.self, forKey: .email)
-        dateCreated = try container.decode(String.self, forKey: .dateCreated)
-        partnerID = try container.decode(String.self, forKey: .partnerID)
+        password = try container.decode(String.self, forKey: .password) // If you need to decode password
         gender = try container.decode(GENDER.self, forKey: .gender)
-        loveLanguage = try container.decode(LOVELANGUAGE.self, forKey: .loveLanguage)
         invitationCode = try container.decode(String.self, forKey: .invitationCode)
+        dateCreated = try container.decode(String.self, forKey: .dateCreated)
+        partnerID = try container.decodeIfPresent(String.self, forKey: .partnerID)
+        loveLanguage = try container.decodeIfPresent(LOVELANGUAGE.self, forKey: .loveLanguage)
+        __v = try container.decode(Int.self, forKey: .__v)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -57,10 +63,13 @@ class Person: ObservableObject, Codable, Identifiable {
         try container.encode(_id, forKey: ._id)
         try container.encode(name, forKey: .name)
         try container.encode(email, forKey: .email)
+        try container.encode(password, forKey: .password) // If you need to encode password
+        try container.encode(gender, forKey: .gender)
+        try container.encode(invitationCode, forKey: .invitationCode)
         try container.encode(dateCreated, forKey: .dateCreated)
         try container.encode(partnerID, forKey: .partnerID)
-        try container.encode(gender, forKey: .gender)
-        try container.encode(loveLanguage, forKey: .loveLanguage)
-        try container.encode(invitationCode, forKey: .invitationCode)
+        try container.encode(loveLanguage, forKey: .loveLanguage) 
+        try container.encode(__v, forKey: .__v)
     }
 }
+

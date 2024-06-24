@@ -12,7 +12,7 @@ class QuestViewModel: ObservableObject {
     @Published var loveLanguage: LoveLanguageModel = .actsOfService
     
     init() {
-        fetchQuests()
+//        fetchQuests()C
     }
     
     func fetchQuests() {
@@ -35,7 +35,7 @@ class QuestViewModel: ObservableObject {
                     self.quests = decodedResponse.result
                 }
             } catch {
-                print("Error decoding response: \(error)")
+                print("Error decoding response fetch quest: \(error)")
             }
         }.resume()
     }

@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @State private var showTodayQuest = false
     @AppStorage("email") var email: String?
+    @AppStorage("partnerID") var partnerID: String?
     
     var body: some View {
         ZStack {
@@ -29,6 +30,7 @@ struct MainView: View {
                 .interactiveDismissDisabled(true) // Disable interactive dismissal
         }
         .onAppear {
+//            print("parner: " ,partnerID!)
             showTodayQuest = true
         }
     }
@@ -37,6 +39,10 @@ struct MainView: View {
 func logout() {
     print("Logout")
     UserDefaults.standard.removeObject(forKey: "token")
+    UserDefaults.standard.removeObject(forKey: "partnerID")
+    UserDefaults.standard.removeObject(forKey: "invitationCode")
+    UserDefaults.standard.removeObject(forKey: "loveLanguage")
+    UserDefaults.standard.removeObject(forKey: "email")
 }
 
 struct TodayQuestView: View {
@@ -49,6 +55,16 @@ struct TodayQuestView: View {
                 Text("Today Quest")
                     .font(.custom("Mali-Bold", size: 24))
                     .padding(.top, 20)
+                
+                Button(action: {
+                    logout()
+                }, label: {
+                    Text("Logout")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(8)
+                })
                 
                 QuestView()
                     .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)

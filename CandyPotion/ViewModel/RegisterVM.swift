@@ -8,21 +8,30 @@
 import Foundation
 
 class RegisterVM: ObservableObject {
-//    @Published var person: Person
     @Published var input: InputRegister
     @Published var condition: Conditions
     
     init() {
-//        self.person = Person()
         self.input = InputRegister()
         self.condition = Conditions()
     }
     
     func submitFeedback() {
         guard !input.name.isEmpty else {
-            condition.alertMessage = "Please fill in all fields"
+            condition.alertMessage = "Please fill the name"
             condition.showAlert = true
-            print("ERROR")
+            return
+        }
+        
+        guard !input.email.isEmpty else {
+            condition.alertMessage = "Please fill the email"
+            condition.showAlert = true
+            return
+        }
+        
+        guard !input.password.isEmpty else {
+            condition.alertMessage = "Please fill the password"
+            condition.showAlert = true
             return
         }
         
@@ -71,10 +80,12 @@ class RegisterVM: ObservableObject {
                     // check if succes or not with check the value of result
                     DispatchQueue.main.async {
                         if (decodedResponse.result != nil) {
+                            self.input.email = ""
+                            self.input.password = ""
                             self.condition.alertMessage = decodedResponse.message
                             self.condition.showAlert = true
                             self.condition.isFinished = true
-                            self.condition.isFinished.toggle()
+//                            self.condition.isFinished.toggle() 
                         } else {
                             self.condition.alertMessage = decodedResponse.message
                             self.condition.showAlert = true
@@ -83,7 +94,7 @@ class RegisterVM: ObservableObject {
                 } catch {
                     // catch kalo error pas lagi decode from json to
                     DispatchQueue.main.async {
-                        print("Error decoding response: \(error.localizedDescription)")
+                        print("Error decoding response registerVM: \(error.localizedDescription)")
                         self.condition.alertMessage = "Error decoding response: \(error.localizedDescription)"
                         self.condition.showAlert = true
                     }

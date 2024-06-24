@@ -12,9 +12,13 @@ struct LoginView: View {
     
     var body: some View {
         NavigationStack {
-            if loginVM.isLoggedIn {
-                InputCodeView()
-            } else {
+//            if loginVM.condition.isFinished {
+//                if UserDefaults.standard.string(forKey: "partnerID") != nil {
+//                    MainView()
+//                } else {
+//                    InputCodeView()
+//                }
+//            } else {
                 ZStack {
                     Color(.purpleCandy).ignoresSafeArea()
                     Image("background").resizable().opacity(0.5).ignoresSafeArea()
@@ -41,9 +45,9 @@ struct LoginView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
                                 HStack {
-                                    TextField("Email", text: $loginVM.email)
-                                        .onChange(of: loginVM.email) { _, newValue in
-                                            loginVM.email = newValue.lowercased()
+                                    TextField("Email", text: $loginVM.input.email)
+                                        .onChange(of: loginVM.input.email) { _, newValue in
+                                            loginVM.input.email = newValue.lowercased()
                                         }
                                         .padding(.horizontal)
                                         .autocapitalization(.none)
@@ -56,7 +60,7 @@ struct LoginView: View {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
                                 HStack {
-                                    SecureField("Password", text: $loginVM.password)
+                                    SecureField("Password", text: $loginVM.input.password)
                                         .padding(.horizontal)
                                         .font(.custom("Mali-Regular", size: 18))
                                 }
@@ -82,24 +86,25 @@ struct LoginView: View {
                                     .foregroundColor(.white)
                             }
                         }
-                        .disabled(loginVM.isLoading)
+                        .disabled(loginVM.condition.isLoading)
                         .padding(.top, 20)
                         
                         HStack {
                             Text("Do not have an account?").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
                                 .foregroundColor(Color(red: 0.79, green: 0.77, blue: 0.81))
-
+                            
                             NavigationLink(destination: RegisterView()) {
                                 Text("Register").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
                                     .foregroundColor(.white).underline()
                             }
                         }
-                    }.offset(y: -20)
-                        .alert(isPresented: $loginVM.showAlert) {
-                            Alert(title: Text("Failed to Login"), message: Text(loginVM.alertMessage), dismissButton: .default(Text("OK")))
-                        }
+                    }
+                    .offset(y: -20)
+                    .alert(isPresented: $loginVM.condition.showAlert) {
+                        Alert(title: Text("Failed to Login"), message: Text(loginVM.condition.alertMessage), dismissButton: .default(Text("OK")))
+                    }
                     
-                    if loginVM.isLoading {
+                    if loginVM.condition.isLoading {
                         VStack {
                             ProgressView()
                                 .progressViewStyle(.circular)
@@ -118,7 +123,7 @@ struct LoginView: View {
                         )
                     }
                 }
-            }
+//            }
         }
         .navigationBarBackButtonHidden(true)
     }

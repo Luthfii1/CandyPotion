@@ -66,7 +66,9 @@ struct RegisterView: View {
                         
                         Picker("Gender", selection: $registerVM.input.gender) {
                             ForEach(GENDER.allCases, id: \.self) { gender in
-                                Text(gender.rawValue.capitalized).tag(gender)
+                                Text(gender.rawValue.capitalized)
+                                    .tag(gender)
+                                    .foregroundColor(registerVM.input.gender == gender ? .white : .primary) 
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())

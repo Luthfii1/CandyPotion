@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InputLoveLanguage: View {
     @State private var selectedLoveLang: String = ""
-    private var id = UserDefaults.standard.person(forKey: "person")?._id
+    private var id = UserDefaults.standard.string(forKey: "_id")
     private var token = UserDefaults.standard.value(forKey: "token")
     private var person = UserDefaults.standard.person(forKey: "person")
 
@@ -27,11 +27,11 @@ struct InputLoveLanguage: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
 
-                LoveLangButton(lovelang: self.$selectedLoveLang, text: "Acts of Service")
-                LoveLangButton(lovelang: self.$selectedLoveLang, text: "Physical Touch")
-                LoveLangButton(lovelang: self.$selectedLoveLang, text: "Quality Time")
-                LoveLangButton(lovelang: self.$selectedLoveLang, text: "Receiving Gifts")
-                LoveLangButton(lovelang: self.$selectedLoveLang, text: "Words of Affirmation")
+                LoveLangButton(lovelang: self.$selectedLoveLang, text: "ACTS_OF_SERVICE")
+                LoveLangButton(lovelang: self.$selectedLoveLang, text: "PHYSICAL_TOUCH")
+                LoveLangButton(lovelang: self.$selectedLoveLang, text: "QUALITY_TIME")
+                LoveLangButton(lovelang: self.$selectedLoveLang, text: "RECEIVING_GIFTS")
+                LoveLangButton(lovelang: self.$selectedLoveLang, text: "WORDS_OF_AFFIRMATION")
                 
                 Spacer().frame(height: 72)
 
@@ -61,7 +61,7 @@ struct InputLoveLanguage: View {
     func updateLoveLanguage() {
         print(self.selectedLoveLang)
 
-        guard let url = URL(string: "http://mc2-be.vercel.app/account/updateAccount/\(id ?? "")") else { return }
+        guard let url = URL(string: "http://mc2-be.vercel.app/account/updateAccount/\(id!)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
