@@ -26,28 +26,42 @@ struct RegisterView: View {
                         .foregroundColor(.white)
 
                     VStack {
-                        TextField("Name", text: $registerVM.input.name)
-                            .autocapitalization(.none)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.custom("Mali-Regular", size: 18))
-                            .padding(.horizontal)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                TextField("Name", text: $registerVM.input.name)
+                                    .font(.custom("Mali-Regular", size: 18))
+                                    .padding(.horizontal)
+                            }
+                            .frame(width: 329)
+                        }
                         
                         Spacer().frame(height: 12)
                         
-                        TextField("Email", text: $registerVM.input.email)
-                            .autocapitalization(.none)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.custom("Mali-Regular", size: 18))
-                            .padding(.horizontal)
-                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                TextField("Email", text: $registerVM.input.email)
+                                    .autocapitalization(.none)
+                                    .font(.custom("Mali-Regular", size: 18))
+                                    .padding(.horizontal)
+                            }
+                            .frame(width: 329)
+                        }
+
                         Spacer().frame(height: 12)
                         
-                        SecureField("Password", text: $registerVM.input.password)
-                            .autocapitalization(.none)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .font(.custom("Mali-Regular", size: 18))
-                            .padding(.horizontal)
-                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                SecureField("Password", text: $registerVM.input.password)
+                                    .autocapitalization(.none)
+                                    .font(.custom("Mali-Regular", size: 18))
+                                    .padding(.horizontal)
+                            }
+                            .frame(width: 329)
+                        }
+
                         Spacer().frame(height: 12)
                         
                         Picker("Gender", selection: $registerVM.input.gender) {
@@ -87,14 +101,14 @@ struct RegisterView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
-                            .foregroundColor(.white).underline()
+                        .foregroundColor(.white).underline()
                     }
                 }
                 .alert(isPresented: $registerVM.condition.showAlert) {
                     Alert(title: Text("Failed to Register"), message: Text(registerVM.condition.alertMessage), dismissButton: .default(Text("OK")))
                 }
                 
-                if (registerVM.condition.isLoading) {
+                if registerVM.condition.isLoading {
                     VStack {
                         ProgressView()
                             .progressViewStyle(.circular)
@@ -115,7 +129,7 @@ struct RegisterView: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .onChange(of: registerVM.condition.isFinished) { oldVal, isFinished in
+        .onChange(of: registerVM.condition.isFinished) { _, isFinished in
             if isFinished {
                 presentationMode.wrappedValue.dismiss()
             }
