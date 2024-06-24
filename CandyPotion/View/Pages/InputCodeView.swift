@@ -82,7 +82,7 @@ struct InputCodeView: View {
                     .frame(width: 70, height: 82)
                     .multilineTextAlignment(.center)
                     .font(.largeTitle)
-                    .keyboardType(.numberPad)
+                    .keyboardType(.default)
                     .background(
                         RoundedRectangle(cornerRadius: 12)
                             .stroke(Color.white, lineWidth: 2)
