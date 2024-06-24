@@ -11,13 +11,16 @@ struct MainView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
             
-            Button(action: logout) {
+            Button(action: {
+                print("Log")
+                logout()
+            }, label: {
                 Text("Logout")
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.red)
                     .cornerRadius(8)
-            }
+            })
         }
         .sheet(isPresented: $showTodayQuest) {
             TodayQuestView(presentationMode: $showTodayQuest)
@@ -29,10 +32,11 @@ struct MainView: View {
             showTodayQuest = true
         }
     }
-    
-    func logout() {
-        UserDefaults.standard.removeObject(forKey: "token")
-    }
+}
+
+func logout() {
+    print("Logout")
+    UserDefaults.standard.removeObject(forKey: "token")
 }
 
 struct TodayQuestView: View {
@@ -65,7 +69,7 @@ struct TodayQuestView: View {
                     }
                     .onEnded { value in
                         if dragOffset > geometry.size.height / 4 {
-                            presentationMode = false
+//                            presentationMode = false
                         }
                         dragOffset = 0.0
                     }
