@@ -30,7 +30,7 @@ struct MainView: View {
     }
 
     func logout() {
-        email = nil
+        UserDefaults.standard.removeObject(forKey: "token")
     }
 }
 

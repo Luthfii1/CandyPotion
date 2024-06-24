@@ -7,17 +7,15 @@
 
 import Foundation
 
-import Foundation
-
 class PersonModel: Identifiable, ObservableObject, Codable {
-    var _id: String
-    var name: String
-    var email: String
-    var dateCreated: String
-    var partnerID: String
-    var gender: GENDER
-    var loveLanguage: LOVELANGUAGE
-    var invitationCode: String
+    @Published var _id: String
+    @Published var name: String
+    @Published var email: String
+    @Published var dateCreated: String
+    @Published var partnerID: String
+    @Published var gender: GENDER
+    @Published var loveLanguage: LOVELANGUAGE
+    @Published var invitationCode: String
 
     init(name: String, email: String, dateCreated: String, partnerID: String, gender: GENDER, loveLanguage: LOVELANGUAGE, invitationCode: String, _id: String) {
         self.name = name
@@ -102,13 +100,6 @@ class PersonModel: Identifiable, ObservableObject, Codable {
     }
 }
 
-enum GENDER: String, Codable {
-    case MALE, FEMALE, UNKNOWN
-}
-
-enum LOVELANGUAGE: String, Codable {
-    case ACTS_OF_SERVICE, WORDS_OF_AFFIRMATION, PHYSICAL_TOUCH, RECEIVING_GIFTS, QUALITY_TIME, UNKNOWN
-}
 
 extension UserDefaults {
     func setPerson(_ person: PersonModel, forKey key: String) {

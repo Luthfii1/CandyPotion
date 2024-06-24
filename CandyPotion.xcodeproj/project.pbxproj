@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3916472C28247700082A07 /* InputLoveLanguage.swift */; };
 		9B3916562C285E6600082A07 /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164A2C285E6600082A07 /* Mali-Regular.ttf */; };
 		9B3916572C285E6600082A07 /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */; };
@@ -20,12 +21,24 @@
 		9B39165F2C285E6600082A07 /* Mali-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916532C285E6600082A07 /* Mali-ExtraLightItalic.ttf */; };
 		9B3916602C285E6600082A07 /* Mali-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */; };
 		9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */; };
+=======
+		468A2F982C240229005C825F /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* QuestView.swift */; };
+		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
+		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
+		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
+		468A2FA22C241530005C825F /* QuestPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* QuestPage.swift */; };
+>>>>>>> Development
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
 		9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980122C22A95D00388BE1 /* RegisterView.swift */; };
 		9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980142C23CCF000388BE1 /* LoginView.swift */; };
 		9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980162C2412E500388BE1 /* InputCodeView.swift */; };
+		DD429AEA2C283A3100256406 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AE92C283A3100256406 /* Person.swift */; };
+		DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEB2C283A9E00256406 /* LoginVM.swift */; };
+		DD429AEE2C286C3F00256406 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AED2C286C3F00256406 /* API.swift */; };
+		DD429AF02C2892EC00256406 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEF2C2892EC00256406 /* RegisterVM.swift */; };
+		DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */; };
 		DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */; };
 		DD9D163E2C1F4A3E0001FE44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */; };
 		DD9D16412C1F4A3E0001FE44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9D16402C1F4A3E0001FE44 /* Preview Assets.xcassets */; };
@@ -37,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		9B3916472C28247700082A07 /* InputLoveLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguage.swift; sourceTree = "<group>"; };
 		9B39164A2C285E6600082A07 /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
 		9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -51,12 +65,24 @@
 		9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-LightItalic.ttf"; sourceTree = "<group>"; };
 		9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9B3916622C285E9D00082A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+=======
+		468A2F972C240229005C825F /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
+		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
+		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
+		468A2FA12C241530005C825F /* QuestPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPage.swift; sourceTree = "<group>"; };
+>>>>>>> Development
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
 		9B8980122C22A95D00388BE1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9B8980142C23CCF000388BE1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B8980162C2412E500388BE1 /* InputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
+		DD429AE92C283A3100256406 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		DD429AEB2C283A9E00256406 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		DD429AED2C286C3F00256406 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DD429AEF2C2892EC00256406 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterStruct.swift; sourceTree = "<group>"; };
 		DD9D16362C1F4A3D0001FE44 /* CandyPotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyPotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyPotionApp.swift; sourceTree = "<group>"; };
 		DD9D163D2C1F4A3E0001FE44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,9 +177,12 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E092C1F5824003CD2CD /* PersonModel.swift */,
+				468A2F9F2C241056005C825F /* LoveLanguageModel.swift */,
 				9B89800C2C2283A700388BE1 /* QuestModel.swift */,
 				9B89800E2C22860200388BE1 /* AchievementModel.swift */,
 				9B8980102C22866F00388BE1 /* BadgeModel.swift */,
+				DD429AE92C283A3100256406 /* Person.swift */,
+				DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
+				468A2F972C240229005C825F /* QuestView.swift */,
+				468A2FA12C241530005C825F /* QuestPage.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
@@ -174,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E072C1F56A3003CD2CD /* TextFieldInput.swift */,
+				468A2F992C2406D9005C825F /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E052C1F5657003CD2CD /* String+Extension.swift */,
+				DD429AED2C286C3F00256406 /* API.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -190,6 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				DDBB7E0E2C1F598D003CD2CD /* MainVM.swift */,
+				468A2F9B2C2406F5005C825F /* QuestViewModel.swift */,
+				DD429AEB2C283A9E00256406 /* LoginVM.swift */,
+				DD429AEF2C2892EC00256406 /* RegisterVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -276,19 +312,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */,
 				9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */,
 				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
+				DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */,
+				DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */,
 				DDBB7E0A2C1F5824003CD2CD /* PersonModel.swift in Sources */,
 				DDBB7E0F2C1F598D003CD2CD /* MainVM.swift in Sources */,
 				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
+				DD429AEA2C283A3100256406 /* Person.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
 				DDBB7E082C1F56A3003CD2CD /* TextFieldInput.swift in Sources */,
 				DDBB7E042C1F5515003CD2CD /* MainView.swift in Sources */,
 				9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */,
 				9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */,
 				DDBB7E062C1F5657003CD2CD /* String+Extension.swift in Sources */,
+<<<<<<< HEAD
 				9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */,
+=======
+				DD429AF02C2892EC00256406 /* RegisterVM.swift in Sources */,
+				DD429AEE2C286C3F00256406 /* API.swift in Sources */,
+>>>>>>> Development
 				DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */,
+				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
+				468A2F982C240229005C825F /* QuestView.swift in Sources */,
+				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
+				468A2FA22C241530005C825F /* QuestPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +471,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CandyPotion/Preview Content\"";
-				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				DEVELOPMENT_TEAM = F7WR45KMA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CandyPotion/Info.plist;
@@ -453,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CandyPotion/Preview Content\"";
-				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				DEVELOPMENT_TEAM = F7WR45KMA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CandyPotion/Info.plist;
