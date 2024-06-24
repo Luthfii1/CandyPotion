@@ -52,7 +52,7 @@ struct ValidateQuestView: View {
         }
         .navigationBarTitle("Quest Validation")
         .onAppear {
-            viewModel.fetchQuests()
+//            viewModel.fetchQuests()
         }
     }
     

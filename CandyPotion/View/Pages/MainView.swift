@@ -3,6 +3,7 @@ import SwiftUI
 struct MainView: View {
     @State private var showTodayQuest = false
     @AppStorage("email") var email: String?
+    @AppStorage("partnerID") var partnerID: String?
     
     var body: some View {
         ZStack {
@@ -11,13 +12,16 @@ struct MainView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
             
-            Button(action: logout) {
+            Button(action: {
+                print("Log")
+                logout()
+            }, label: {
                 Text("Logout")
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.red)
                     .cornerRadius(8)
-            }
+            })
         }
         .sheet(isPresented: $showTodayQuest) {
             TodayQuestView(presentationMode: $showTodayQuest)
@@ -26,13 +30,19 @@ struct MainView: View {
                 .interactiveDismissDisabled(true) // Disable interactive dismissal
         }
         .onAppear {
+//            print("parner: " ,partnerID!)
             showTodayQuest = true
         }
     }
-    
-    func logout() {
-        UserDefaults.standard.removeObject(forKey: "token")
-    }
+}
+
+func logout() {
+    print("Logout")
+    UserDefaults.standard.removeObject(forKey: "token")
+    UserDefaults.standard.removeObject(forKey: "partnerID")
+    UserDefaults.standard.removeObject(forKey: "invitationCode")
+    UserDefaults.standard.removeObject(forKey: "loveLanguage")
+    UserDefaults.standard.removeObject(forKey: "email")
 }
 
 struct TodayQuestView: View {
@@ -45,6 +55,16 @@ struct TodayQuestView: View {
                 Text("Today Quest")
                     .font(.custom("Mali-Bold", size: 24))
                     .padding(.top, 20)
+                
+                Button(action: {
+                    logout()
+                }, label: {
+                    Text("Logout")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(8)
+                })
                 
                 QuestView()
                     .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
@@ -65,7 +85,7 @@ struct TodayQuestView: View {
                     }
                     .onEnded { value in
                         if dragOffset > geometry.size.height / 4 {
-                            presentationMode = false
+//                            presentationMode = false
                         }
                         dragOffset = 0.0
                     }
