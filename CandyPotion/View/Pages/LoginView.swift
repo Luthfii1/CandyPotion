@@ -8,156 +8,120 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
-    @State private var showAlert = false
-    @State private var alertMessage = ""
-    @State private var token = ""
-    @State private var partnerID = ""
-    @ObservedObject private var person = PersonModel(name: "", email: "", dateCreated: "", partnerID: "", gender: GENDER(rawValue: "UNKNOWN")!, loveLanguage: LOVELANGUAGE(rawValue: "UNKNOWN")!, invitationCode: "", _id: "")
-
+    @EnvironmentObject private var loginVM: LoginVM
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Welcome Back!")
-                    .padding()
-
+            ZStack {
+                Color(.purpleCandy).ignoresSafeArea()
+                Image("background").resizable().opacity(0.5).ignoresSafeArea()
+                
                 VStack {
-                    TextField("Email", text: $email)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-
-                    SecureField("Password", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                }
-
-                Button {
-                    login()
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                            .frame(height: 46)
-                            .padding(.horizontal)
-                            .foregroundColor(.gray)
-                        Text("Log In").foregroundStyle(.white)
+                    Image("loginAssets").resizable().frame(width: 257, height: 373).offset(y: 40)
+                    Text("Welcome Back!")
+                        .font(
+                            Font.custom("Mali-Bold", size: 32)
+                                .weight(.bold)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                    Text("Your presence matters,\nget back into Candylabs!")
+                        .font(
+                            Font.custom("Mali", size: 15)
+                                .weight(.medium)
+                        )
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
+                        .padding(.bottom)
+                    
+                    VStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                TextField("Email", text: $loginVM.input.email)
+                                    .onChange(of: loginVM.input.email) { _, newValue in
+                                        loginVM.input.email = newValue.lowercased()
+                                    }
+                                    .padding(.horizontal)
+                                    .autocapitalization(.none)
+                                    .font(.custom("Mali-Regular", size: 18))
+                            }
+                            .frame(width: 329)
+                        }
+                        Spacer().frame(height: 12)
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 12).frame(width: 329, height: 51).foregroundColor(.white)
+                            HStack {
+                                SecureField("Password", text: $loginVM.input.password)
+                                    .padding(.horizontal)
+                                    .font(.custom("Mali-Regular", size: 18))
+                            }
+                            .frame(width: 329)
+                        }
+                    }
+                    
+                    Button {
+                        loginVM.login()
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(.clear)
+                                .frame(width: 329, height: 51)
+                                .background(Color(red: 0.56, green: 0.4, blue: 0.78))
+                                .cornerRadius(12)
+                            Text("Log in")
+                                .font(
+                                    Font.custom("Mali", size: 24)
+                                        .weight(.bold)
+                                )
+                                .multilineTextAlignment(.center)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    .disabled(loginVM.condition.isLoading)
+                    .padding(.top, 20)
+                    
+                    HStack {
+                        Text("Do not have an account?").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.79, green: 0.77, blue: 0.81))
+                        
+                        NavigationLink(destination: RegisterView()) {
+                            Text("Register").font(.custom("Mali-Regular", size: 18)).multilineTextAlignment(.center)
+                                .foregroundColor(.white).underline()
+                        }
                     }
                 }
-                .padding(.top, 20)
-
-                HStack {
-                    Text("Do not have an account?")
-                    NavigationLink(destination: RegisterView()) {
-                        Text("Register")
-                    }
+                .offset(y: -20)
+                .alert(isPresented: $loginVM.condition.showAlert) {
+                    Alert(title: Text("Failed to Login"), message: Text(loginVM.condition.alertMessage), dismissButton: .default(Text("OK")))
                 }
-                .padding(.top, 20)
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
-            .navigationDestination(for: String.self) { _ in
-                InputCodeView()
+                
+                if loginVM.condition.isLoading {
+                    VStack {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .scaleEffect(2)
+                            .padding(.top, 20)
+                        
+                        Text("Please wait")
+                            .padding(.top, 30)
+                    }
+                    .padding(20)
+                    .background(.white)
+                    .cornerRadius(25)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.black, lineWidth: 1)
+                    )
+                }
             }
         }
         .navigationBarBackButtonHidden(true)
     }
-
-    func login() {
-        guard !email.isEmpty else {
-            alertMessage = "Please fill in all fields"
-            showAlert = true
-            return
-        }
-
-        let feedbackData = LoginFeedback(email: email, password: password)
-        postFeedback(feedback: feedbackData)
-    }
-
-    func postFeedback(feedback: LoginFeedback) {
-        guard let url = URL(string: "http://localhost:8000/auth/login") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        do {
-            let jsonData = try JSONEncoder().encode(feedback)
-            request.httpBody = jsonData
-
-            URLSession.shared.dataTask(with: request) { data, _, error in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Failed to send feedback: \(error.localizedDescription)"
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                guard let data = data else {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "No data received"
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                do {
-                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-
-                    DispatchQueue.main.async {
-                        self.token = decodedResponse.result
-
-                        UserDefaults.standard.set(self.email, forKey: "email")
-                        UserDefaults.standard.set(self.token, forKey: "token")
-                        UserDefaults.standard.set(self.partnerID, forKey: "partnerID")
-
-                        person.getAccount(token: self.token) { success in
-                            if success {
-                                UserDefaults.standard.setPerson(self.person, forKey: "person")
-                            } else {
-                                self.alertMessage = "Failed to fetch account details"
-                                self.showAlert = true
-                            }
-                        }
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Error decoding response: \(error.localizedDescription)"
-                        self.showAlert = true
-                    }
-                }
-            }.resume()
-        } catch {
-            DispatchQueue.main.async {
-                self.alertMessage = "Failed to encode feedback"
-                self.showAlert = true
-            }
-        }
-    }
-}
-
-struct LoginFeedback: Codable {
-    var email: String
-    var password: String
-}
-
-struct LoginResponse: Decodable {
-    let messages: String
-    let result: String
-}
-
-struct AccountResponse: Decodable {
-    var _id: String?
-    var name: String?
-    var email: String?
-    var dateCreated: String?
-    var password: String?
-    var partnerID: String?
-    var gender: String?
-    var loveLanguage: String?
-    var invitationCode: String?
 }
 
 #Preview {
     LoginView()
+        .environmentObject(LoginVM())
 }

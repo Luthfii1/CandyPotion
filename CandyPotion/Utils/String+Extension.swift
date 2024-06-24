@@ -26,4 +26,17 @@ extension String {
         }
         return result
     }
+    
+    var toSnakeCase: String {
+        // Convert the string to uppercase
+        let uppercasedString = self.uppercased()
+        
+        // Separate words using CharacterSet of uppercase letters
+        let words = uppercasedString.split(whereSeparator: { !$0.isLetter })
+        
+        // Join words with underscores
+        let snakeCaseString = words.joined(separator: "_")
+        
+        return snakeCaseString
+    }
 }

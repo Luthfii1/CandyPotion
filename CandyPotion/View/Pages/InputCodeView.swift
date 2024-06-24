@@ -8,163 +8,170 @@
 import SwiftUI
 
 struct InputCodeView: View {
-    @State private var code: [String] = ["", "", "", ""]
-    @State private var showAlert = false
-    @State private var alertMessage = ""
-
-    private var token = UserDefaults.standard.value(forKey: "token")
-    private var person = UserDefaults.standard.person(forKey: "person")
-    private var invitationCode = UserDefaults.standard.person(forKey: "person")?.invitationCode
-    private var id = UserDefaults.standard.person(forKey: "person")?._id
+    @EnvironmentObject private var inputCodeVM: InputCodeVM
     @FocusState private var focusedField: Int?
-
+    
     var body: some View {
+        ZStack {
+            backgroundView
+            VStack {
+                logoView
+                titleView
+                Spacer().frame(height: 30)
+                instructionView
+                codeInputFields
+                Spacer().frame(height: 30)
+                orView
+                invitePartnerView
+            }
+            .alert(isPresented: $inputCodeVM.condition.showAlert) {
+                Alert(title: Text("Message"), message: Text(inputCodeVM.condition.alertMessage), dismissButton: .default(Text("OK")))
+            }
+        }
+        .onReceive(inputCodeVM.timer) { _ in
+            inputCodeVM.getAccount()
+        }
+        .onAppear{
+            inputCodeVM.getAccount()
+        }
+    }
+    
+    private var backgroundView: some View {
+        ZStack {
+            Color(.purpleCandy)
+                .ignoresSafeArea()
+            Image("background")
+                .resizable()
+                .opacity(0.5)
+                .ignoresSafeArea()
+        }
+    }
+    
+    private var logoView: some View {
+        Image("logo").resizable().frame(width: 100, height: 100)
+    }
+    
+    private var titleView: some View {
         VStack {
-            Text("Your Code")
-
-            Text("\(invitationCode ?? "AAAA")").font(.largeTitle)
-
-            Text("Let your partner input your code")
+            Text("Candylabs is made for two")
+                .font(Font.custom("Mali", size: 32).weight(.bold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
+                .frame(width: 296, height: 92, alignment: .top)
+            
+            Text("Link your account to your partner’s \naccount to start your journey")
+                .font(Font.custom("Mali", size: 15).weight(.medium))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
+                .padding(.bottom)
+        }
+    }
+    
+    private var instructionView: some View {
+        Text("Insert your partner’s code")
+            .font(Font.custom("Mali", size: 18).weight(.bold))
+            .multilineTextAlignment(.center)
+            .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
+            .padding(.bottom)
+    }
+    
+    private var codeInputFields: some View {
+        HStack {
+            ForEach(0 ..< 4, id: \.self) { index in
+                TextField("", text: $inputCodeVM.code[index])
+                    .frame(width: 70, height: 82)
+                    .multilineTextAlignment(.center)
+                    .font(.largeTitle)
+                    .keyboardType(.default)
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+                    .font(.custom("Mali-Regular", size: 18))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .focused($focusedField, equals: index)
+                    .onChange(of: inputCodeVM.code[index]) { oldValue, newValue in
+                        handleCodeChange(at: index, newValue: newValue.uppercased())
+                    }
+            }
+        }
+        .padding(.horizontal)
+        .onAppear {
+            focusedField = 0
+        }
+        .padding(.bottom)
+    }
+    
+    private var orView: some View {
+        HStack {
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(width: 138, height: 4)
+                .background(.white)
+                .cornerRadius(20)
             Text("or")
-
-            Text("Input your partner's code")
-
-            HStack {
-                ForEach(0 ..< 4, id: \.self) { index in
-                    TextField("", text: $code[index])
-                        .frame(width: 50, height: 50)
-                        .multilineTextAlignment(.center)
-                        .font(.largeTitle)
-                        .border(Color.gray, width: 1)
-                        .keyboardType(.numberPad)
-                        .focused($focusedField, equals: index)
-                        .onChange(of: code[index]) { newValue in
-                            if newValue.count > 1 {
-                                code[index] = String(newValue.prefix(1))
-                            }
-                            if newValue.count == 1 {
-                                if index < 3 {
-                                    focusedField = index + 1
-                                } else {
-                                    focusedField = nil
-                                    verifyCode()
-                                }
-                            }
-                        }
-                }
-            }
-            .padding(.horizontal)
-            .onAppear {
-                focusedField = 0
-            }
-
-            Button(action: {
-                verifyCode()
-            }) {
-                ZStack {
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                        .frame(height: 46)
-                        .padding(.horizontal)
-                        .foregroundColor(.blue)
-                    Text("Verify").foregroundColor(.white)
-                }
-            }
-            .padding(.top, 20)
+                .font(.custom("Mali-Regular", size: 18))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white)
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(width: 138, height: 4)
+                .background(.white)
+                .cornerRadius(20)
         }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        .padding(.bottom)
+    }
+    
+    private var invitePartnerView: some View {
+        VStack {
+            Text("Invite your partner with code:")
+                .font(Font.custom("Mali", size: 18).weight(.bold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
+            
+            Text("\(UserDefaults.standard.string(forKey: "invitationCode") ?? "ERROR")")
+                .font(Font.custom("Mali", size: 36).weight(.bold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(red: 1, green: 0.99, blue: 0.96))
         }
     }
-
-    func verifyCode() {
-        guard code.allSatisfy({ !$0.isEmpty }) else {
-            alertMessage = "Please enter the complete verification code"
-            showAlert = true
-            return
+    
+    private func handleCodeChange(at index: Int, newValue: String) {
+        let uppercasedValue = newValue.uppercased()
+        if uppercasedValue.count > 1 {
+            inputCodeVM.code[index] = String(uppercasedValue.prefix(1))
+        } else {
+            inputCodeVM.code[index] = uppercasedValue
         }
-
-        let enteredCode = code.joined()
-        let inputCode = CodeRequest(inputCode: enteredCode)
-
-        guard let url = URL(string: "http://localhost:8000/account/updateAccount/\(id ?? "")") else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        do {
-            let jsonData = try JSONEncoder().encode(inputCode)
-            request.httpBody = jsonData
-
-            URLSession.shared.dataTask(with: request) { data, _, error in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Failed to send feedback: \(error.localizedDescription)"
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                guard let data = data else {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "No data received"
-                        self.showAlert = true
-                    }
-                    return
-                }
-
-                do {
-                    let decodedResponse = try JSONDecoder().decode(CodeResponse.self, from: data)
-                    print(decodedResponse)
-                    print(data)
-
-                    person?.getAccount(token: self.token as! String) { success in
-                        if success {
-                            UserDefaults.standard.setPerson(self.person!, forKey: "person")
-                            UserDefaults.standard.set(self.person!.partnerID, forKey: "partnerID")
-                        } else {
-                            self.alertMessage = "Failed to fetch account details"
-                            self.showAlert = true
-                        }
-                    }
-
-
-                    DispatchQueue.main.async {}
-                } catch {
-                    DispatchQueue.main.async {
-                        self.alertMessage = "Error decoding response: \(error.localizedDescription)"
-                        self.showAlert = true
-                    }
-                }
-            }.resume()
-        } catch {
-            DispatchQueue.main.async {
-                self.alertMessage = "Failed to encode feedback"
-                self.showAlert = true
+        if uppercasedValue.count == 1 {
+            if index < 3 {
+                focusedField = index + 1
+            } else {
+                focusedField = nil
+                inputCodeVM.verifyCode()
+            }
+        } else if uppercasedValue.isEmpty {
+            if index > 0 {
+                focusedField = index - 1
             }
         }
-
-//        let validCode = invitationCode
-//
-//        if enteredCode == validCode {
-//            alertMessage = "Code verified successfully"
-//            showAlert = true
-//        } else {
-//            alertMessage = "Invalid verification code"
-//            showAlert = true
-//        }
+        
+        if inputCodeVM.code.joined().count == 4 {
+            let enteredCode = inputCodeVM.code.joined().uppercased()
+            if enteredCode == UserDefaults.standard.string(forKey: "invitationCode") {
+                inputCodeVM.condition.alertMessage = "You can't add yourself as a partner"
+                inputCodeVM.condition.showAlert = true
+            } else {
+                print("success add partner")
+                // Call verifyCode method to process the entered code
+                inputCodeVM.verifyCode()
+            }
+        }
     }
-}
-
-struct CodeRequest: Codable {
-    var inputCode: String
-}
-
-struct CodeResponse: Decodable {
-    var message: String? // Failed only
-    var messages: String? // Succeed only
-    var result: AccountResponse? // Succeed only
 }
 
 #Preview {
     InputCodeView()
+        .environmentObject(InputCodeVM())
 }
