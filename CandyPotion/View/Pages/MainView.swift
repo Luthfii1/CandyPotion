@@ -30,7 +30,7 @@ struct MainView: View {
                 Text("Logout")
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color.red)
+                    .background(.red)
                     .cornerRadius(8)
             })
         }
@@ -69,9 +69,6 @@ struct TodayQuestView: View {
                     .font(.custom("Mali-Bold", size: 24))
                     .padding(.top, 20)
                 
-                DailyQuestView(dayCounter: $dayCounter) // Pass `dayCounter` as a binding
-                    .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
-                
                 Button(action: {
                     logout()
                 }, label: {
@@ -82,7 +79,8 @@ struct TodayQuestView: View {
                         .cornerRadius(8)
                 })
                 
-                QuestView()
+                DailyQuestView(dayCounter: $dayCounter) // Pass `dayCounter` as a binding
+                    .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
                 
                 Text("This Week’s Quest")
                     .font(.custom("Mali-Bold", size: 24))
@@ -104,10 +102,6 @@ struct TodayQuestView: View {
         
         
     }
-}
-
-func logout() {
-    UserDefaults.standard.removeObject(forKey: "token")
 }
     
 #Preview {
