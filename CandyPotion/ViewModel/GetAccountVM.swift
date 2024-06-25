@@ -20,6 +20,7 @@ class GetAccountVM: ObservableObject {
         UserDefaults.standard.string(forKey: "token")
     }
     
+    @MainActor
     func getAccount(completion: @escaping (Bool) -> Void) {
         guard let url = URL(string: "\(APITest)/account/getAccount") else { return }
         var request = URLRequest(url: url)
@@ -72,6 +73,7 @@ class GetAccountVM: ObservableObject {
                     
                     if let result = decodedResponse.result {
                         self.person = result
+                        print("self person : \(self.person.name)")
                         UserDefaults.standard.set(result.invitationCode, forKey: "invitationCode")
                         UserDefaults.standard.set(result._id, forKey: "_id")
                         

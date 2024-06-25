@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var questVM = QuestVM()
+    @EnvironmentObject private var accountVM : GetAccountVM
     @State private var showTodayQuest = false
     @State private var dayCounter = 0
     
@@ -35,15 +37,27 @@ struct MainView: View {
             })
         }
         .sheet(isPresented: $showTodayQuest) {
-            TodayQuestView(presentationMode: $showTodayQuest, dayCounter: $dayCounter) // Binding `dayCounter` here
+            TodayQuestView(presentationMode: $showTodayQuest, dayCounter: $dayCounter)
+                .environmentObject(questVM)
                 .background(Color(red: 1, green: 0.96, blue: 0.95))
                 .presentationDetents([.fraction(0.10), .fraction(0.60)])
                 .interactiveDismissDisabled(true)
         }
         .onAppear {
 //            print("parner: " ,partnerID!)
+            
+            accountVM.getAccount { success in
+                    if success {
+                        // Data fetched successfully, you can access `person` data here
+                        print("Person's name: \(accountVM.person.name)")
+                    } else {
+                        // Handle error case if needed
+                        print("Failed to fetch account data")
+                    }
+                }
             showTodayQuest = true
             print ("Day Counter:", dayCounter)
+            print("name : \(accountVM.person.name)")
         }
     }
 }
@@ -58,6 +72,7 @@ func logout() {
 }
 
 struct TodayQuestView: View {
+    @EnvironmentObject private var questVM: QuestVM
     @Binding var presentationMode: Bool
     @Binding var dayCounter: Int // Receive `dayCounter` as a binding
     @State private var dragOffset: CGFloat = 0.0
@@ -79,13 +94,15 @@ struct TodayQuestView: View {
                         .cornerRadius(8)
                 })
                 
-                DailyQuestView(dayCounter: $dayCounter) // Pass `dayCounter` as a binding
-                    .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
+                QuestCard(image:"Candy Image Quest", quest: "Hug your partner and say that you love her/him", questType: .daily)
+                    .environmentObject(questVM)
                 
                 Text("This Week’s Quest")
                     .font(.custom("Mali-Bold", size: 24))
                 
-                WeeklyQuestView(quest: "Your weekly quest here", dayCounter: $dayCounter)
+                QuestCard(image:"Elephant Image Quest", quest: "Goes to monas at the of this week", questType: .weekly)
+                    .environmentObject(questVM)
+//                WeeklyQuestView(quest: "Your weekly quest here", dayCounter: $dayCounter)
                     .padding(.bottom, 50)
                 
                 Spacer()
@@ -106,4 +123,5 @@ struct TodayQuestView: View {
     
 #Preview {
     MainView()
+        .environmentObject(GetAccountVM())
 }

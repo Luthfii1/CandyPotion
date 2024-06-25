@@ -98,7 +98,7 @@ class InputCodeVM: ObservableObject {
         }
     }
     
-    func getAccount() {
+    @MainActor func getAccount() {
         GetAccountVM().getAccount { success in
             DispatchQueue.main.async {
                 if success {
