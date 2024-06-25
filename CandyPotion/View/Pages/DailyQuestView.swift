@@ -21,7 +21,7 @@ struct DailyQuestView: View {
         }
         .onAppear {
             selectedQuest = viewModel.getRandomQuest(for: viewModel.loveLanguage)
-            print(selectedQuest)
+//            print(selectedQuest)
             postQuest(description: selectedQuest)
         }
         .alert(isPresented: $showAlert) {
@@ -70,7 +70,7 @@ struct DailyQuestView: View {
                 } catch {
                     DispatchQueue.main.async {
                         self.alertMessage = "Error decoding response: \(error)"
-                        print(error)
+                        print("Error questview: ", error)
                         self.showAlert = true
                     }
                 }

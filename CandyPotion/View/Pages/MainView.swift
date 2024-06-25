@@ -23,13 +23,16 @@ struct MainView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
             
-            Button(action: logout) {
+            Button(action: {
+                print("Log")
+                logout()
+            }, label: {
                 Text("Logout")
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.red)
                     .cornerRadius(8)
-            }
+            })
         }
         .sheet(isPresented: $showTodayQuest) {
             TodayQuestView(presentationMode: $showTodayQuest, dayCounter: $dayCounter) // Binding `dayCounter` here
@@ -38,12 +41,21 @@ struct MainView: View {
                 .interactiveDismissDisabled(true)
         }
         .onAppear {
+//            print("parner: " ,partnerID!)
             showTodayQuest = true
             print ("Day Counter:", dayCounter)
         }
     }
 }
 
+func logout() {
+    print("Logout")
+    UserDefaults.standard.removeObject(forKey: "token")
+    UserDefaults.standard.removeObject(forKey: "partnerID")
+    UserDefaults.standard.removeObject(forKey: "invitationCode")
+    UserDefaults.standard.removeObject(forKey: "loveLanguage")
+    UserDefaults.standard.removeObject(forKey: "email")
+}
 
 struct TodayQuestView: View {
     @Binding var presentationMode: Bool
@@ -59,6 +71,18 @@ struct TodayQuestView: View {
                 
                 DailyQuestView(dayCounter: $dayCounter) // Pass `dayCounter` as a binding
                     .opacity(dragOffset < geometry.size.height / 4 ? 1 : 0)
+                
+                Button(action: {
+                    logout()
+                }, label: {
+                    Text("Logout")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.red)
+                        .cornerRadius(8)
+                })
+                
+                QuestView()
                 
                 Text("This Week’s Quest")
                     .font(.custom("Mali-Bold", size: 24))

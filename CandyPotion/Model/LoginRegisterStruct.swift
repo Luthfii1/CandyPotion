@@ -8,13 +8,19 @@
 import Foundation
 
 struct InputLogin: Codable {
-    var email: String
-    var password: String
+    var email: String = ""
+    var password: String = "" 
 }
 
 struct LoginResponse: Decodable {
     let message: String
     let result: String?
+}
+
+struct GetAccountResponse: Decodable {
+    let message: String
+    let result: PersonModel?
+    // here PERSON
 }
 
 struct AccountResponse: Decodable {
@@ -38,7 +44,8 @@ struct InputRegister: Codable {
 
 struct RegisterResponse: Decodable {
     let message: String
-    let result: AccountResponse?
+    // HERE PERSON
+    let result: PersonModel?
 }
 
 struct Conditions {
