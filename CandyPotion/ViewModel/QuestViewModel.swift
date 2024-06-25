@@ -42,23 +42,33 @@ class QuestViewModel: ObservableObject {
     
     private let personQuests: [LoveLanguageModel: [String]] = [
         .wordsOfAffirmation: [
-            "Write a heartfelt love letter to your partner bro.",
+            "Write a heartfelt love letter to your partner.",
+            "Bilang arigatoou senpai ke dia.",
+            "Puji baju dia hari ini.",
             // Add other quests here...
         ],
         .actsOfService: [
             "Cook your partner's favorite meal.",
+            "Beliin spotify premium.",
+            "Kasih playlist seru.",
             // Add other quests here...
         ],
         .receivingGifts: [
             "Give your partner a thoughtful gift just because.",
+            "Kasih voucher Sociolla.",
+            "Checkoutin shopeenya.",
             // Add other quests here...
         ],
         .qualityTime: [
             "Plan a weekend getaway.",
+            "Telpon 10 menit.",
+            "Video Call 10 menit.",
             // Add other quests here...
         ],
         .physicalTouch: [
             "Give your partner a massage.",
+            "Ucapkan betapa ingin memeluknya.",
+            "Beri rencana untuk berpegangan tangan nanti.",
             // Add other quests here...
         ]
     ]
