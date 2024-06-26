@@ -70,6 +70,12 @@ struct QuestCard: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(questVM.isCompleted(isDaily: isDaily) ? Color(red: 0.23, green: 0.8, blue: 0.22) : Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
             )
+            .padding(isDaily ? 0 : 8)
+            .background(isDaily ? .clear : .yellow)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isDaily ? .clear : questVM.isCompleted(isDaily: isDaily) ? Color(red: 0.23, green: 0.8, blue: 0.22) : Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
+            )
             .padding(.horizontal)
             .onAppear(perform: questVM.startTimers)
             .alert(isPresented: $questVM.condition.showAlert) {

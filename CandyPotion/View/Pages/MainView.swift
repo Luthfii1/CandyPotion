@@ -52,7 +52,7 @@ struct CustomTabBar: View {
             TabBarItem(index: 2, selectedTab: $selectedTab, imageName: "note.text", title: "Journey Notes")
         }
         .padding(.horizontal, 10)
-        .frame(width: .infinity, height: 80, alignment: .center)
+        .frame(height: 80, alignment: .center)
         .background(Color.white.opacity(0.75))
         .shadow(color: Color.black.opacity(0.3), radius: 0, x: 0, y: -0.33)
     }
