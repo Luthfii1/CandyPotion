@@ -14,15 +14,27 @@ struct CandyBoxView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea(edges: .all)
             
-            Button(action: {
-                accountVM.logout()
-            }, label: {
-                Text("Logout")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.red)
-                    .cornerRadius(8)
-            })
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        accountVM.logout()
+                    }, label: {
+                        Image("Logout")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .overlay(
+                                RoundedCorner()
+                                    .stroke(.gray, lineWidth: 3)
+                            )
+                    })
+                }
+                .padding(.top, 40)
+                Spacer()
+            }
+            .padding()
+            .zIndex(5)
             
             GeometryReader { geometry in
                 ScrollView {
@@ -50,7 +62,7 @@ struct CandyBoxView: View {
                         DragGesture()
                             .onChanged { value in
                                 if value.translation.height < -12 {
-                                    defaultHeight = 0.3
+                                    defaultHeight = 0.4
                                     offsetVal = 300
                                 }
                                 
