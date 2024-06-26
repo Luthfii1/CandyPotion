@@ -36,6 +36,7 @@
 		DD0057F32C299CD700F64802 /* InputLoveLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */; };
 		DD0057FB2C2B283300F64802 /* QuestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FA2C2B283300F64802 /* QuestCard.swift */; };
 		DD0057FE2C2B2AD800F64802 /* QuestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FD2C2B2AD800F64802 /* QuestVM.swift */; };
+		DD0058002C2BC7D000F64802 /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FF2C2BC7D000F64802 /* LogModel.swift */; };
 		DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AE92C283A3100256406 /* PersonModel.swift */; };
 		DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEB2C283A9E00256406 /* LoginVM.swift */; };
 		DD429AEE2C286C3F00256406 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AED2C286C3F00256406 /* API.swift */; };
@@ -93,6 +94,7 @@
 		DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguageVM.swift; sourceTree = "<group>"; };
 		DD0057FA2C2B283300F64802 /* QuestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCard.swift; sourceTree = "<group>"; };
 		DD0057FD2C2B2AD800F64802 /* QuestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestVM.swift; sourceTree = "<group>"; };
+		DD0057FF2C2BC7D000F64802 /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
 		DD429AE92C283A3100256406 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		DD429AEB2C283A9E00256406 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		DD429AED2C286C3F00256406 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				9B8980102C22866F00388BE1 /* BadgeModel.swift */,
 				DD429AE92C283A3100256406 /* PersonModel.swift */,
 				DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */,
+				DD0057FF2C2BC7D000F64802 /* LogModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				DD0057F12C299C7400F64802 /* RegisterVM.swift in Sources */,
 				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
+				DD0058002C2BC7D000F64802 /* LogModel.swift in Sources */,
 				DD0057ED2C29678000F64802 /* GetAccountVM.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
