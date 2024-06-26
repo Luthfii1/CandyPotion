@@ -104,7 +104,7 @@ class LoginVM: ObservableObject {
         }
     }
     
-    private func getAccount() {
+    @MainActor private func getAccount() {
         GetAccountVM().getAccount { success in
             DispatchQueue.main.async {
                 if success {

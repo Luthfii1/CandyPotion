@@ -31,6 +31,7 @@ struct CandyPotionApp: App {
                     .environmentObject(inputLoveLangVM)
             } else {
                 MainView()
+                    .environmentObject(getAccountVM)
             }
         }
     }
