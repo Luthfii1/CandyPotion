@@ -1,96 +1,90 @@
+//
+//  MainView.swift
+//  CandyPotion
+//
+//  Created by Rangga Yudhistira Brata on 25/06/24.
+//
+
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var questVM = QuestVM()
     @EnvironmentObject private var accountVM : GetAccountVM
+    @State private var selectedTab: Int = 1
     
     var body: some View {
-        ZStack {
-            Image(questVM.bgImages[min(questVM.weeklyStreak, questVM.bgImages.count - 1)])
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea(edges: .all)
-            
-            Button(action: {
-                print("Log")
-                accountVM.logout()
-            }, label: {
-                Text("Logout")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(.red)
-                    .cornerRadius(8)
-            })
-        }
-        .sheet(isPresented: .constant(true)) {
-            TodayQuestView()
-                .environmentObject(questVM)
-                .background(Color(red: 1, green: 0.96, blue: 0.95))
-                .presentationDetents([.fraction(0.10), .fraction(0.60)])
-                .interactiveDismissDisabled(true)
-        }
-        .onAppear {
-            accountVM.getAccount { success in
-                if success {
-                    print("Person's name: \(accountVM.person.name)")
-                } else {
-                    print("Failed to fetch account data")
+        VStack(spacing: 0) {
+        
+            switch selectedTab {
+            case 0:
+                NavigationView {
+                    RecipeBookView()
+                }
+            case 1:
+                NavigationView {
+                    CandyBoxView()
+                        .environmentObject(accountVM)
+                }
+            case 2:
+                NavigationView {
+                    AssessView()
+                }
+            default:
+                NavigationView {
+                    CandyBoxView()
                 }
             }
             
-            accountVM.getPartner { success in
-                if success {
-                    print("Partner name: \(accountVM.partner.name)")
-                    
-                    if let loveLanguage = accountVM.partner.loveLanguage {
-                        questVM.getRandomQuest(loveLang: loveLanguage)
-                    } else {
-                        print("Partner love language is nil")
-                    }
-                } else {
-                    print("Failed to fetch account data")
-                }
-            }
+            // Custom Tab Bar
+            CustomTabBar(selectedTab: $selectedTab)
+            
         }
+        .edgesIgnoringSafeArea(.bottom) // Ensure the Tab Bar goes to the bottom
     }
 }
 
-struct TodayQuestView: View {
-    @EnvironmentObject private var questVM: QuestVM
-    @EnvironmentObject private var accountVM: GetAccountVM
-    @State private var dragOffset: CGFloat = 0.0
+struct CustomTabBar: View {
+    @Binding var selectedTab: Int
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                Button(action: {
-                    accountVM.logout()
-                }, label: {
-                    Text("Logout")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.red)
-                        .cornerRadius(8)
-                })
-                .padding(.top, 30)
-                
-                ForEach(QuestType.allCases, id: \.self) { questType in
-                    QuestCard(questType: questType)
-                        .environmentObject(questVM)
-                        .padding(.vertical, 10)
-                }
-                
-                Spacer()
-            }
-            .background(Color(red: 1, green: 0.96, blue: 0.95))
-            .gesture(
-                DragGesture()
-                    .onChanged { value in
-                        dragOffset = value.translation.height
-                    }
-            )
+        HStack(alignment: .center, spacing: 0) {
+            TabBarItem(index: 0, selectedTab: $selectedTab, imageName: "book.fill", title: "Recipe Book")
+            TabBarItem(index: 1, selectedTab: $selectedTab, imageName: "gift.fill", title: "Candy Box")
+            TabBarItem(index: 2, selectedTab: $selectedTab, imageName: "note.text", title: "Journey Notes")
         }
-        .edgesIgnoringSafeArea(.all)
+        .padding(.horizontal, 10)
+        .frame(width: .infinity, height: 80, alignment: .center)
+        .background(Color.white.opacity(0.75))
+        .shadow(color: Color.black.opacity(0.3), radius: 0, x: 0, y: -0.33)
+    }
+}
+
+struct TabBarItem: View {
+    let index: Int
+    @Binding var selectedTab: Int
+    let imageName: String
+    let title: String
+    
+    var body: some View {
+        let isSelected = selectedTab == index
+        let selectedColor = Color(red: 0.87, green: 0, blue: 0.47)
+        
+        Button(action: {
+            selectedTab = index
+        }) {
+            VStack {
+                Image(systemName: imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 24)
+                    .foregroundColor(isSelected ? selectedColor : .gray)
+                
+                Text(title)
+                    .font(Font.custom("Mali", size: 12).weight(.medium))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(isSelected ? selectedColor : .gray)
+            }
+            .frame(maxWidth: .infinity)
+        }
     }
 }
 
