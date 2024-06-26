@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject private var accountVM : GetAccountVM
     @State private var selectedTab: Int = 1
     
     var body: some View {
@@ -21,6 +22,7 @@ struct MainView: View {
             case 1:
                 NavigationView {
                     CandyBoxView()
+                        .environmentObject(accountVM)
                 }
             case 2:
                 NavigationView {
@@ -28,7 +30,7 @@ struct MainView: View {
                 }
             default:
                 NavigationView {
-                    RecipeBookView()
+                    CandyBoxView()
                 }
             }
             
