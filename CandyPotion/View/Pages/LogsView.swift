@@ -15,10 +15,6 @@ struct LogsView: View {
                 .aspectRatio(contentMode: .fit)
             
             
-            
-            
-            
-            
         }
         
     }

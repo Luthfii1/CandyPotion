@@ -7,23 +7,26 @@
 
 import SwiftUI
 
-struct DummyView: View {
+struct CardTabJourneyNotesView: View {
+    var textRectangle: String
+    var isActive: Bool
+    
     var body: some View {
         VStack {
-            Text("Logs")
-                .font(.title)
-                .foregroundColor(.blue)
+            Text(textRectangle)
+                .frame(width: 157)
+                .font(Font.custom("Mali-Bold", size: 24))
+                .foregroundColor(.white)
                 .padding()
                 .background(
                     RoundedCorner(radius: 25, corners: [.topLeft, .topRight])
-                        .fill(Color(red: 0.88, green: 0.63, blue: 0.33))
+                        .fill(isActive ? Color(red: 0.88, green: 0.63, blue: 0.33) : Color(red: 0.55, green: 0.4, blue: 0.21))
                         .overlay(
                             RoundedCorner(radius: 25, corners: [.topLeft, .topRight])
                                 .stroke(Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
-                        ).frame(width: 200)
+                        ).frame(width: 195)
                 )
         }
-        .padding()
     }
 }
 
@@ -42,9 +45,9 @@ struct RoundedCorner: Shape {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CardTabJourneyNotesView_Previews: PreviewProvider {
     static var previews: some View {
-        DummyView()
+        CardTabJourneyNotesView(textRectangle: "Logs", isActive: true)
     }
 }
 

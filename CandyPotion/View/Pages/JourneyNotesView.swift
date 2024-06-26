@@ -19,31 +19,38 @@ struct JourneyNotesView: View {
                 .aspectRatio(contentMode: .fill)
             
             VStack{
-                HStack{
+                Text("Journey Notes")
+                .font(Font.custom("Mali-Bold", size: 36))
+                .foregroundColor(.black)
+                .frame(width: 350, alignment: .leading)
+                
+                
+                HStack(){
                     Button {
                         currentView = "Logs"
                     } label: {
-                        Text(verbatim: "Logs")
+                        CardTabJourneyNotesView(textRectangle: "Logs", isActive: currentView == "Logs")
                     }
                     
                     Button {
                         currentView = "Assess"
                     } label: {
-                        Text(verbatim: "Assess")
+                        CardTabJourneyNotesView(textRectangle: "Assess", isActive: currentView == "Assess")
                     }
                 }
                 
                 if currentView == "Logs"{
                     ScrollView{
                         LogsView()
-                    }
+                    }.offset(y: -10)
                     
                 } else{
                     AssessView()
+                        .offset(y: -10)
                 }
                 
-                
-            }.padding(.top, 120)
+                Spacer()
+            }.padding(.top, 80)
             
         }.ignoresSafeArea(edges: .all)
         

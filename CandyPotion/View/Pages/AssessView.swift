@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct AssessView: View {
-    @State private var isSad: Bool = false
-    @State private var isOkay: Bool = false
-    @State private var isHappy: Bool = false
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             Image("Assess Bar")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -26,71 +23,15 @@ struct AssessView: View {
                         
                         Image("Paper Notes")
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .aspectRatio(contentMode: .fit)
+                            
                         
                         
                         VStack{
                             Text("How was your \npartner’s quests?").font(Font.custom("Mali-Bold", size: 24))
                                 .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
                             
-                            ZStack{
-                                VStack {
-                                    // Outer
-                                }
-                                .frame(width: 360, height: 250)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
-                                )
-                                VStack{
-                                    HStack{
-                                        Text("Quest here").font(Font.custom("Mali-Bold", size: 16))
-                                            .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
-                                        
-                                    }
-                                    
-                                    HStack(spacing: 20){
-                                        
-                                        Button(action: {
-                                            self.isSad = true
-                                        }) {
-                                            Image("Rating Red")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 75, height: 75, alignment: .center)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.isOkay = true
-                                        }) {
-                                            Image("Rating Yellow")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 75, height: 75, alignment: .center)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.isHappy = true
-                                        }) {
-                                            Image("Rating Green")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 75, height: 75, alignment: .center)
-                                        }
-                                        
-                                        
-                                    }.padding(.top, 40)
-                                    
-                                    Text("Please pick one that suits you").font(Font.custom("Mali-Bold", size: 16))
-                                        .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
-                                }
-                                
-                                
-                                
-                                
-                            }
+                            CardAssessment()
                             
                             
                             
@@ -115,4 +56,89 @@ struct AssessView: View {
 
 #Preview {
     AssessView()
+}
+
+struct CardAssessment: View {
+    @State private var isSad: Bool = false
+    @State private var isOkay: Bool = false
+    @State private var isHappy: Bool = false
+    
+    
+    var body: some View {
+        ZStack{
+            
+            VStack {
+                // Outer
+            }
+            .frame(width: 360, height: 250)
+            .background(Color.white)
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
+            )
+            VStack{
+                HStack{
+                    Text("Quest here").font(Font.custom("Mali-Bold", size: 16))
+                        .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
+                    
+                }
+                VStack{
+                    
+                    HStack(spacing: 20){
+                        
+                        Button(action: {
+                            self.isSad = true
+                        }) {
+                            Image("Rating Red")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 75, height: 75, alignment: .center)
+                        }
+                        
+                        Button(action: {
+                            self.isOkay = true
+                        }) {
+                            Image("Rating Yellow")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 75, height: 75, alignment: .center)
+                        }
+                        
+                        Button(action: {
+                            self.isHappy = true
+                        }) {
+                            Image("Rating Green")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 75, height: 75, alignment: .center)
+                        }
+                        
+                        
+                    }.padding(.top, 40)
+                    
+                    Text("Please pick one that suits you").font(Font.custom("Mali-Bold", size: 16))
+                        .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
+                    
+                    
+                    HStack{
+                        //Change to Image Rating Here
+                        Circle()
+                            .frame(width: 70, height: 70, alignment: .leading)
+ 
+                        Text("Thank you for sharing \nyour feeling today").font(Font.custom("Mali-Bold", size: 20))
+                            .foregroundColor(Color(red: 0.31, green: 0.12, blue: 0.24))
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+            
+            
+        }
+    }
 }
