@@ -20,18 +20,19 @@ struct CandyPotionApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if token == nil {
-                LoginView()
-                    .environmentObject(loginVM)
-            } else if partnerID == nil {
-                InputCodeView()
-                    .environmentObject(inputCodeVM)
-            } else if loveLanguage == nil {
-                InputLoveLanguage()
-                    .environmentObject(inputLoveLangVM)
-            } else {
-                MainView()
-            }
+//            if token == nil {
+//                LoginView()
+//                    .environmentObject(loginVM)
+//            } else if partnerID == nil {
+//                InputCodeView()
+//                    .environmentObject(inputCodeVM)
+//            } else if loveLanguage == nil {
+//                InputLoveLanguage()
+//                    .environmentObject(inputLoveLangVM)
+//            } else {
+//                MainView()
+//            }
+            AchievementView()
         }
     }
 }
