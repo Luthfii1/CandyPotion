@@ -22,6 +22,7 @@ class InputCodeVM: ObservableObject {
     }
     
     func verifyCode() {
+        print("verify")
         // check the code is filled
         guard code.allSatisfy({ !$0.isEmpty }) else {
             condition.alertMessage = "Please enter the complete verification code"
@@ -98,7 +99,7 @@ class InputCodeVM: ObservableObject {
         }
     }
     
-    func getAccount() {
+    @MainActor func getAccount() {
         GetAccountVM().getAccount { success in
             DispatchQueue.main.async {
                 if success {
