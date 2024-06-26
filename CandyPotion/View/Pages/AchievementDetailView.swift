@@ -44,10 +44,13 @@ struct AchievementDetailView: View {
                         .resizable()
                         .frame(width: 367, height: 518)
                 }
+                
+                ListLog(month: month)
             }
 
         }.navigationTitle(month)
             .navigationBarTitleDisplayMode(.inline)
+            
     }
 }
 
