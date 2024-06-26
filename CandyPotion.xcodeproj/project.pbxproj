@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		468A2F982C240229005C825F /* DailyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* DailyQuestView.swift */; };
-		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
 		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
 		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
 		468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* ValidateQuestView.swift */; };
 		468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */; };
-		468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC12C29C138005C825F /* WeeklyQuestView.swift */; };
 		468A2FC42C2AC9BB005C825F /* CandyBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */; };
 		468A2FC62C2ACA25005C825F /* RecipeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC52C2ACA25005C825F /* RecipeBookView.swift */; };
 		468A2FC82C2ACB26005C825F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC72C2ACB26005C825F /* MainView.swift */; };
@@ -58,14 +55,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		468A2F972C240229005C825F /* DailyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestView.swift; sourceTree = "<group>"; };
-		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
 		468A2FA12C241530005C825F /* ValidateQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateQuestView.swift; sourceTree = "<group>"; };
 		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyNotesView.swift; sourceTree = "<group>"; };
-		468A2FC12C29C138005C825F /* WeeklyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuestView.swift; sourceTree = "<group>"; };
 		468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyBoxView.swift; sourceTree = "<group>"; };
 		468A2FC52C2ACA25005C825F /* RecipeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookView.swift; sourceTree = "<group>"; };
 		468A2FC72C2ACB26005C825F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -216,16 +210,12 @@
 		DDBB7E002C1F54DE003CD2CD /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				468A2F972C240229005C825F /* DailyQuestView.swift */,
-				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
 				468A2FA12C241530005C825F /* ValidateQuestView.swift */,
 				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
 				9B8980142C23CCF000388BE1 /* LoginView.swift */,
 				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
 				9B3916472C28247700082A07 /* InputLoveLanguage.swift */,
 				468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */,
-				468A2FC12C29C138005C825F /* WeeklyQuestView.swift */,
-				DD0057EE2C29740500F64802 /* LoadingView.swift */,
 				468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */,
 				468A2FC52C2ACA25005C825F /* RecipeBookView.swift */,
 				468A2FC72C2ACB26005C825F /* MainView.swift */,
@@ -363,14 +353,12 @@
 				DD0057F12C299C7400F64802 /* RegisterVM.swift in Sources */,
 				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
-				468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */,
 				468A2FC62C2ACA25005C825F /* RecipeBookView.swift in Sources */,
 				DD0058002C2BC7D000F64802 /* LogModel.swift in Sources */,
 				DD0057ED2C29678000F64802 /* GetAccountVM.swift in Sources */,
 				468A2FCA2C2BB700005C825F /* AssessView.swift in Sources */,
 				468A2FC82C2ACB26005C825F /* MainView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
-				DD0057EF2C29740500F64802 /* LoadingView.swift in Sources */,
 				468A2FC42C2AC9BB005C825F /* CandyBoxView.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
 				DDBB7E082C1F56A3003CD2CD /* TextFieldInput.swift in Sources */,
@@ -444,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -501,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

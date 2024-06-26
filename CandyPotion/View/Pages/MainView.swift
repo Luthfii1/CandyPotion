@@ -89,9 +89,7 @@ struct TabBarItem: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
+#Preview {
+    MainView()
+        .environmentObject(GetAccountVM())
 }
-
