@@ -35,7 +35,7 @@ struct JourneyNotesView: View {
                     Button {
                         currentView = "Assess"
                     } label: {
-                        CardTabJourneyNotesView(textRectangle: "Assess", isActive: currentView == "Assess")
+                        CardTabJourneyNotesView(textRectangle: "Assess", isActive: currentView == "Assess").padding(.trailing, 5)
                     }
                 }
                 
@@ -50,7 +50,9 @@ struct JourneyNotesView: View {
                 }
                 
                 Spacer()
-            }.padding(.top, 80)
+            }
+            .frame(width: 400, height: 800, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .padding(.top, 80)
             
         }.ignoresSafeArea(edges: .all)
         

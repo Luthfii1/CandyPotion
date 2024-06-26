@@ -14,7 +14,7 @@ struct CardTabJourneyNotesView: View {
     var body: some View {
         VStack {
             Text(textRectangle)
-                .frame(width: 157)
+                .frame(width: 160)
                 .font(Font.custom("Mali-Bold", size: 24))
                 .foregroundColor(.white)
                 .padding()

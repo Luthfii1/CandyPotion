@@ -21,8 +21,9 @@ struct CandyPotionApp: App {
     var body: some Scene {
         WindowGroup {
             if token == nil {
-                LoginView()
-                    .environmentObject(loginVM)
+                AssessView()
+//                LoginView()
+//                    .environmentObject(loginVM)
             } else if partnerID == nil {
                 InputCodeView()
                     .environmentObject(inputCodeVM)
