@@ -22,7 +22,7 @@ struct OpenBook: View {
             } insideRight: { _ in
                 RightView()
             }
-            .animation(.easeInOut(duration: 0.5), value: progress) // Add animation here
+            .animation(.easeInOut(duration: 0.5), value: progress)
             .gesture(
                 DragGesture()
                     .updating($dragOffset) { value, state, _ in
@@ -33,7 +33,7 @@ struct OpenBook: View {
                         progress = max(0, min(1, progress - dragProgress))
                     }
             )
-            .onChange(of: dragOffset) { newValue in
+            .onChange(of: dragOffset) { oldValue, newValue in
                 progress = max(0, min(1, progress - newValue))
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if progress >= 1 {

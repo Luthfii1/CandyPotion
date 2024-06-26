@@ -39,7 +39,7 @@ struct CardLogView: View {
                                 )
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.black)
-                                .frame(width: 175, alignment: .top)
+                                .frame(width: 175, alignment: .center)
                         }.frame(width: 300, height: 40, alignment: .leading)
                     }
                 }
