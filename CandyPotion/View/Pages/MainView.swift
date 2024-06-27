@@ -26,7 +26,7 @@ struct MainView: View {
                 }
             case 2:
                 NavigationView {
-                    AssessView()
+                    JourneyNotesView()
                 }
             default:
                 NavigationView {
