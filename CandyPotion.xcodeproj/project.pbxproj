@@ -11,11 +11,7 @@
 		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
 		468A2FC22C29C138005C825F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		468A2FC82C2ACB26005C825F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC72C2ACB26005C825F /* MainView.swift */; };
-		468A2FCA2C2BB700005C825F /* AssessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC92C2BB700005C825F /* AssessView.swift */; };
-		468A2FCC2C2BB746005C825F /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCB2C2BB746005C825F /* LogsView.swift */; };
 		468A2FCE2C2BC9C6005C825F /* CardTabJourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCD2C2BC9C6005C825F /* CardTabJourneyNotesView.swift */; };
-		468A2FD52C2C76FC005C825F /* QuestPerMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FD42C2C76FC005C825F /* QuestPerMonthViewModel.swift */; };
-		9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3916472C28247700082A07 /* InputLoveLanguage.swift */; };
 		9B2DD0CD2C2C4E5300647E02 /* CardLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */; };
 		9B2DD0CF2C2C53DF00647E02 /* ListLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */; };
 		9B3916562C285E6600082A07 /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164A2C285E6600082A07 /* Mali-Regular.ttf */; };
@@ -71,12 +67,7 @@
 		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
 		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		468A2FC72C2ACB26005C825F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		468A2FC92C2BB700005C825F /* AssessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessView.swift; sourceTree = "<group>"; };
-		468A2FCB2C2BB746005C825F /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		468A2FCD2C2BC9C6005C825F /* CardTabJourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTabJourneyNotesView.swift; sourceTree = "<group>"; };
-		468A2FD42C2C76FC005C825F /* QuestPerMonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPerMonthViewModel.swift; sourceTree = "<group>"; };
-		468A2FD62C2C82E0005C825F /* ListLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLog.swift; sourceTree = "<group>"; };
-		9B3916472C28247700082A07 /* InputLoveLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguage.swift; sourceTree = "<group>"; };
 		9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogView.swift; sourceTree = "<group>"; };
 		9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLog.swift; sourceTree = "<group>"; };
 		9B39164A2C285E6600082A07 /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
@@ -322,9 +313,6 @@
 				DD1C3DB42C2D3D43007C782A /* Post Authentication */,
 				DD1C3DAF2C2D3CEC007C782A /* Authentication */,
 				468A2FC72C2ACB26005C825F /* MainView.swift */,
-				468A2FC92C2BB700005C825F /* AssessView.swift */,
-				468A2FCB2C2BB746005C825F /* LogsView.swift */,
-				468A2FD62C2C82E0005C825F /* ListLog.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -338,7 +326,6 @@
 				9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */,
 				9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */,
 				DD0057FA2C2B283300F64802 /* QuestCard.swift */,
-				468A2F992C2406D9005C825F /* CardView.swift */,
 				468A2FCD2C2BC9C6005C825F /* CardTabJourneyNotesView.swift */,
 			);
 			path = Components;
@@ -361,12 +348,6 @@
 				DD1C3DCD2C2D49EA007C782A /* Authentication */,
 				DD0057FC2C2B2AB600F64802 /* Quest */,
 				468A2F9B2C2406F5005C825F /* QuestViewModel.swift */,
-				DD429AEB2C283A9E00256406 /* LoginVM.swift */,
-				DD0057EA2C2943AF00F64802 /* InputCodeVM.swift */,
-				DD0057EC2C29678000F64802 /* GetAccountVM.swift */,
-				DD0057F02C299C7400F64802 /* RegisterVM.swift */,
-				DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */,
-				468A2FD42C2C76FC005C825F /* QuestPerMonthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -463,10 +444,7 @@
 				DD1C3DD62C2D4A7F007C782A /* AccountVM.swift in Sources */,
 				DD1C3DCF2C2D4A02007C782A /* LoginVM.swift in Sources */,
 				DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */,
-				DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */,
 				468A2FCE2C2BC9C6005C825F /* CardTabJourneyNotesView.swift in Sources */,
-				DD0057F12C299C7400F64802 /* RegisterVM.swift in Sources */,
-				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
 				DD1C3DC62C2D4092007C782A /* CandyBoxView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
 				468A2FC22C29C138005C825F /* (null) in Sources */,
@@ -496,12 +474,7 @@
 				DD1C3DC12C2D3EFF007C782A /* AssessView.swift in Sources */,
 				9B2DD0CF2C2C53DF00647E02 /* ListLog.swift in Sources */,
 				DD0057FB2C2B283300F64802 /* QuestCard.swift in Sources */,
-				468A2FD72C2C82E0005C825F /* ListLog.swift in Sources */,
-				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
-				468A2F982C240229005C825F /* DailyQuestView.swift in Sources */,
 				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
-				468A2FD52C2C76FC005C825F /* QuestPerMonthViewModel.swift in Sources */,
-				468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */,
 				9B67975F2C2B909F00BC11D3 /* AchievementBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

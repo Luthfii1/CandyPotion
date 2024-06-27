@@ -1,5 +1,5 @@
 //
-//  QuestPerMonthViewModeol.swift
+//  QuestPerMonthVM.swift
 //  CandyPotion
 //
 //  Created by Alifiyah Ariandri on 26/06/24.
