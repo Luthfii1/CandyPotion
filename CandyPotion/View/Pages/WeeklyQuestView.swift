@@ -1,21 +1,44 @@
-// CardView.swift
+//
+//  WeeklyQuestView.swift
+//  CandyPotion
+//
+//  Created by Rangga Yudhistira Brata on 24/06/24.
+//
+
 import SwiftUI
 
-struct CardView: View {
+struct WeeklyQuestView: View {
     let quest: String
     @State private var alertMessage: String = ""
     @State private var showAlert: Bool = false
     @State private var isChecked: Bool = false
     @Binding var dayCounter: Int
     
-    @State private var endDate: Date = Date().addingTimeInterval(60 * 60) // 1 hour from now
+    @State private var endDate: Date = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
     @State private var timeRemaining: String = ""
     
     var body: some View {
-     
+        ZStack {
+            VStack {
+                // Outer
+            }
+            .frame(width: 360, height: 120)
+            .background(isChecked ? Color(red: 0.51, green: 1, blue: 0.53) : Color(red: 1, green: 0.9, blue: 0.51))
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isChecked ? Color(red: 0.23, green: 0.8, blue: 0.22) : Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
+            )
+            .padding()
+            .onAppear(perform: startTimer)
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Update Status"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
+            
+            // Inner
             VStack {
                 HStack(alignment: .center){
-                    Image("Candy Image Quest")
+                    Image("Elephant Image Quest")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 86, height: 86, alignment: .leading)
@@ -49,10 +72,11 @@ struct CardView: View {
                     }
                     .disabled(isChecked)
                 }
+                
             }
-            .frame(width: 361, height: 113)
+            .frame(width: 340, height: 100)
             .background(Color.white)
-            .cornerRadius(20)
+            .cornerRadius(10)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(isChecked ? Color(red: 0.23, green: 0.8, blue: 0.22) : Color(red: 0.31, green: 0.12, blue: 0.24), lineWidth: 3)
@@ -62,6 +86,7 @@ struct CardView: View {
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Update Status"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
+        }
     }
     
     func startTimer() {
@@ -77,9 +102,9 @@ struct CardView: View {
         if timeInterval <= 0 {
             timeRemaining = "Expired"
         } else {
-            let minutes = Int(timeInterval) / 60
-            let seconds = Int(timeInterval) % 60
-            timeRemaining = String(format: "%02dm %02ds left", minutes, seconds)
+            let days = Int(timeInterval) / 86400
+            let hours = (Int(timeInterval) % 86400) / 3600
+            timeRemaining = String(format: "%2dd %2dh left", days, hours)
         }
     }
     
@@ -127,21 +152,7 @@ struct CardView: View {
     }
 }
 
-struct QuestUpdate: Codable {
-    let isCompleted: Bool
-}
-
-struct Result: Decodable {
-    let assignUser: [String]
-    let isCompleted: Bool
-    let type: String
-    let description: String
-    let _id: String
-    let dateQuest: String
-    let __v: Int
-}
-
 #Preview {
-    CardView(quest: "Write a heartfelt love letter to your partner.", dayCounter: .constant(0))
+    WeeklyQuestView(quest: "Write a heartfelt love letter to your partner.", dayCounter: .constant(0))
 }
 
