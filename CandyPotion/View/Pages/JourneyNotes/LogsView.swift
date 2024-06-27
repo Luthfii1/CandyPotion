@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LogsView: View {
-    @StateObject private var viewModel = QuestPerMonthViewModel(month: 6, year: 2024)
+    @StateObject private var viewModel = QuestPerMonthVM(month: 6, year: 2024)
     
     var body: some View {
         VStack(spacing: 0){
