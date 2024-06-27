@@ -16,9 +16,7 @@ struct LogsView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
             
-            
             ScrollView {
-                
                 ZStack(alignment: .top){
                     VStack(spacing: 0){
                         Image("Paper Notes")

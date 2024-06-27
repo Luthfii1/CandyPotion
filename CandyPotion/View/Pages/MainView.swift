@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject private var accountVM : GetAccountVM
+    @EnvironmentObject private var accountVM : AccountVM
     @State private var selectedTab: Int = 1
     
     var body: some View {
         VStack(spacing: 0) {
-            // Your views here based on the selected tab
+        
             switch selectedTab {
             case 0:
                 NavigationView {
-                    RecipeBookView()
+                    AchieveView()
                 }
             case 1:
                 NavigationView {
@@ -36,6 +36,7 @@ struct MainView: View {
             
             // Custom Tab Bar
             CustomTabBar(selectedTab: $selectedTab)
+            
         }
         .edgesIgnoringSafeArea(.bottom) // Ensure the Tab Bar goes to the bottom
     }
@@ -50,10 +51,8 @@ struct CustomTabBar: View {
             TabBarItem(index: 1, selectedTab: $selectedTab, imageName: "gift.fill", title: "Candy Box")
             TabBarItem(index: 2, selectedTab: $selectedTab, imageName: "note.text", title: "Journey Notes")
         }
-        .padding(.horizontal, 0)
-        .padding(.top, 16)
-        .padding(.bottom, 39)
-        .frame(width: 393, height: 86, alignment: .center)
+        .padding(.horizontal, 10)
+        .frame(height: 80, alignment: .center)
         .background(Color.white.opacity(0.75))
         .shadow(color: Color.black.opacity(0.3), radius: 0, x: 0, y: -0.33)
     }
@@ -89,9 +88,7 @@ struct TabBarItem: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
+#Preview {
+    MainView()
+        .environmentObject(AccountVM())
 }
-

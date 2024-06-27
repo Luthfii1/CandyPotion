@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GetAccountVM: ObservableObject {
+class AccountVM: ObservableObject {
     @Published var person: PersonModel
     @Published var partner: PersonModel
     @Published var condition: Conditions
@@ -160,7 +160,7 @@ class GetAccountVM: ObservableObject {
                     
                     if let result = decodedResponse.result {
                         self.partner = result
-                        print("partner lovelange in getaccount: \(self.partner.loveLanguage!)")
+                        print("partner lovelange in getaccount: \(self.partner.loveLanguage ?? .UNKNOWN)")
                         self.condition.isFinished = true
                         completion(true)
                     } else {
