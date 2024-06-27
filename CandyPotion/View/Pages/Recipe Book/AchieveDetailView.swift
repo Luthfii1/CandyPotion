@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AchievementDetailView: View {
+struct AchieveDetailView: View {
     var month: String
     var badge: String
     var candycount: Int
@@ -63,5 +63,5 @@ struct AchievementDetailView: View {
 }
 
 #Preview {
-    AchievementDetailView(month: "January", badge: "Gold", candycount: 25)
+    AchieveDetailView(month: "January", badge: "Gold", candycount: 25)
 }
