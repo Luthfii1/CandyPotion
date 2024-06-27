@@ -15,7 +15,6 @@
 		468A2FCC2C2BB746005C825F /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCB2C2BB746005C825F /* LogsView.swift */; };
 		468A2FCE2C2BC9C6005C825F /* CardTabJourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCD2C2BC9C6005C825F /* CardTabJourneyNotesView.swift */; };
 		468A2FD52C2C76FC005C825F /* QuestPerMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FD42C2C76FC005C825F /* QuestPerMonthViewModel.swift */; };
-		468A2FD72C2C82E0005C825F /* ListLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FD62C2C82E0005C825F /* ListLog.swift */; };
 		9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3916472C28247700082A07 /* InputLoveLanguage.swift */; };
 		9B2DD0CD2C2C4E5300647E02 /* CardLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */; };
 		9B2DD0CF2C2C53DF00647E02 /* ListLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */; };
