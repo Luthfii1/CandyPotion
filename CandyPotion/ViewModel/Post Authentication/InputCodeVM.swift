@@ -1,96 +1,91 @@
 //
-//  LoginVM.swift
+//  InputCodeVM.swift
 //  CandyPotion
 //
-//  Created by Luthfi Misbachul Munir on 23/06/24.
+//  Created by Luthfi Misbachul Munir on 24/06/24.
 //
 
 import Foundation
 
-class LoginVM: ObservableObject {
-    @Published var person: PersonModel
-    @Published var input: InputLogin
+class InputCodeVM: ObservableObject {
     @Published var condition: Conditions
+    @Published var code: [String] = ["", "", "", ""]
+    @Published var timer = Timer.publish(every: 1, on: .main, in: .common)
+        .autoconnect()
+    
+    var idUser: String {
+        UserDefaults.standard.string(forKey: "_id")!
+    }
     
     init() {
-        self.person = PersonModel()
-        self.input = InputLogin()
         self.condition = Conditions()
     }
     
-    func login() {
-        // Check input email not empty
-        guard !input.email.isEmpty else {
-            condition.alertMessage = "Please fill the email"
+    func verifyCode() {
+        print("verify")
+        // check the code is filled
+        guard code.allSatisfy({ !$0.isEmpty }) else {
+            condition.alertMessage = "Please enter the complete verification code"
             condition.showAlert = true
             return
         }
-        //Check input password not empty
-        guard !input.password.isEmpty else {
-            condition.alertMessage = "Please fill the password"
-            condition.showAlert = true
-            return
-        }
-        // Set API, method and headers
-        guard let url = URL(string: "\(APITest)/auth/login") else { return }
+        
+        // join into string for all codes and convert to uppercase
+        let enteredCode = code.map{ $0.uppercased() }.joined()
+        let inputCode = CodeRequest(inputCode: enteredCode)
+        print("inputcode: ", inputCode)
+        
+        // API request, set header, and set method
+        guard let url = URL(string: "\(APITest)/account/updateAccount/\(idUser)") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // do catch for parsing
+        // parsing from struct to json
         do {
-            // parsing data from input struct to json
-            let jsonData = try JSONEncoder().encode(input)
+            let jsonData = try JSONEncoder().encode(inputCode)
             request.httpBody = jsonData
             // set isLoading to give user information still fetching data from back end
             DispatchQueue.main.async {
                 self.condition.isLoading = true
             }
             
-            // Call API sessions
+            // Start session
             URLSession.shared.dataTask(with: request) { data, response, error in
-                // Check if there are error
+                // If got error
                 if let error = error {
                     DispatchQueue.main.async {
-                        print("Failed to send feedback: \(error.localizedDescription)")
                         self.condition.alertMessage = "Failed to send feedback: \(error.localizedDescription)"
                         self.condition.showAlert = true
                     }
                     return
                 }
                 
-                // Check got the data or not from backend
+                // check the data is received
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        print("no data received")
                         self.condition.alertMessage = "No data received"
                         self.condition.showAlert = true
                     }
                     return
                 }
                 
-                // do catch for decode from json to struct or class
+                // decode the data from json to struct or class
                 do {
-                    let decodedResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                    let decodedResponse = try JSONDecoder().decode(CodeResponse.self, from: data)
+                    
                     DispatchQueue.main.async {
-                        // if success got the result
-                        if let token = decodedResponse.result {
-                            self.input.email = ""
-                            self.input.password = ""
-                            UserDefaults.standard.set(token, forKey: "token")
-                            self.condition.alertMessage = decodedResponse.message
-                            self.condition.showAlert = true
-                            self.getAccount() // Call getAccount here
-                        } else { // if got error
+                        // check if got result
+                        if let result = decodedResponse.result {
+                            print("result inputCodeVM: ", result)
+                        } else {
                             self.condition.alertMessage = decodedResponse.message
                             self.condition.showAlert = true
                         }
-                        // finish loading
                         self.condition.isLoading = false
                     }
                 } catch {
                     DispatchQueue.main.async {
-                        print("Error decoding response loginVM: \(error.localizedDescription)")
                         self.condition.alertMessage = "Error decoding response: \(error.localizedDescription)"
                         self.condition.showAlert = true
                     }
@@ -104,8 +99,8 @@ class LoginVM: ObservableObject {
         }
     }
     
-    @MainActor private func getAccount() {
-        GetAccountVM().getAccount { success in
+    @MainActor func getAccount() {
+        AccountVM().getAccount { success in
             DispatchQueue.main.async {
                 if success {
                     // TODO: WILL BE DELETE
@@ -122,4 +117,13 @@ class LoginVM: ObservableObject {
             }
         }
     }
+}
+
+struct CodeRequest: Codable {
+    var inputCode: String
+}
+
+struct CodeResponse: Decodable {
+    var message: String
+    var result: PersonModel? // Succeed only
 }

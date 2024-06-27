@@ -7,23 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		468A2F982C240229005C825F /* DailyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F972C240229005C825F /* DailyQuestView.swift */; };
-		468A2F9A2C2406D9005C825F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F992C2406D9005C825F /* CardView.swift */; };
 		468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9B2C2406F5005C825F /* QuestViewModel.swift */; };
 		468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2F9F2C241056005C825F /* LoveLanguageModel.swift */; };
-		468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FA12C241530005C825F /* ValidateQuestView.swift */; };
-		468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */; };
-		468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC12C29C138005C825F /* WeeklyQuestView.swift */; };
+		468A2FC22C29C138005C825F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		468A2FC82C2ACB26005C825F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC72C2ACB26005C825F /* MainView.swift */; };
 		9B2DD0CD2C2C4E5300647E02 /* CardLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */; };
 		9B2DD0CF2C2C53DF00647E02 /* ListLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */; };
-		9B2DD0D12C2C574E00647E02 /* QuestPerMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2DD0D02C2C574E00647E02 /* QuestPerMonthViewModel.swift */; };
-		468A2FC42C2AC9BB005C825F /* CandyBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */; };
-		468A2FC62C2ACA25005C825F /* RecipeBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC52C2ACA25005C825F /* RecipeBookView.swift */; };
-		468A2FC82C2ACB26005C825F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC72C2ACB26005C825F /* MainView.swift */; };
-		468A2FCA2C2BB700005C825F /* AssessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FC92C2BB700005C825F /* AssessView.swift */; };
-		468A2FCC2C2BB746005C825F /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCB2C2BB746005C825F /* LogsView.swift */; };
-		468A2FCE2C2BC9C6005C825F /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A2FCD2C2BC9C6005C825F /* DummyView.swift */; };
-		9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3916472C28247700082A07 /* InputLoveLanguage.swift */; };
 		9B3916562C285E6600082A07 /* Mali-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164A2C285E6600082A07 /* Mali-Regular.ttf */; };
 		9B3916572C285E6600082A07 /* Mali-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */; };
 		9B3916582C285E6600082A07 /* Mali-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B39164C2C285E6600082A07 /* Mali-Medium.ttf */; };
@@ -36,26 +25,33 @@
 		9B39165F2C285E6600082A07 /* Mali-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916532C285E6600082A07 /* Mali-ExtraLightItalic.ttf */; };
 		9B3916602C285E6600082A07 /* Mali-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */; };
 		9B3916612C285E6600082A07 /* Mali-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */; };
-		9B67975B2C2ACB4C00BC11D3 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67975A2C2ACB4C00BC11D3 /* AchievementView.swift */; };
-		9B67975D2C2B7A4100BC11D3 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67975C2C2B7A4100BC11D3 /* AchievementViewModel.swift */; };
 		9B67975F2C2B909F00BC11D3 /* AchievementBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B67975E2C2B909F00BC11D3 /* AchievementBadge.swift */; };
 		9B6797612C2BCE1C00BC11D3 /* OpenBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6797602C2BCE1C00BC11D3 /* OpenBook.swift */; };
-		9B6797632C2BE63100BC11D3 /* AchievementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6797622C2BE63000BC11D3 /* AchievementDetailView.swift */; };
 		9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800C2C2283A700388BE1 /* QuestModel.swift */; };
 		9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89800E2C22860200388BE1 /* AchievementModel.swift */; };
 		9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980102C22866F00388BE1 /* BadgeModel.swift */; };
-		9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980122C22A95D00388BE1 /* RegisterView.swift */; };
-		9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980142C23CCF000388BE1 /* LoginView.swift */; };
-		9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8980162C2412E500388BE1 /* InputCodeView.swift */; };
-		DD0057EB2C2943AF00F64802 /* InputCodeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057EA2C2943AF00F64802 /* InputCodeVM.swift */; };
-		DD0057ED2C29678000F64802 /* GetAccountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057EC2C29678000F64802 /* GetAccountVM.swift */; };
-		DD0057F12C299C7400F64802 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057F02C299C7400F64802 /* RegisterVM.swift */; };
-		DD0057F32C299CD700F64802 /* InputLoveLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */; };
 		DD0057FB2C2B283300F64802 /* QuestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FA2C2B283300F64802 /* QuestCard.swift */; };
 		DD0057FE2C2B2AD800F64802 /* QuestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FD2C2B2AD800F64802 /* QuestVM.swift */; };
 		DD0058002C2BC7D000F64802 /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0057FF2C2BC7D000F64802 /* LogModel.swift */; };
+		DD1C3DB12C2D3D0C007C782A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DB02C2D3D0C007C782A /* LoginView.swift */; };
+		DD1C3DB32C2D3D2A007C782A /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DB22C2D3D2A007C782A /* RegisterView.swift */; };
+		DD1C3DB62C2D3D90007C782A /* InputCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DB52C2D3D90007C782A /* InputCodeView.swift */; };
+		DD1C3DB82C2D3DAE007C782A /* LoveLangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DB72C2D3DAE007C782A /* LoveLangView.swift */; };
+		DD1C3DBC2C2D3E38007C782A /* AchieveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DBB2C2D3E38007C782A /* AchieveView.swift */; };
+		DD1C3DBE2C2D3E5D007C782A /* AchieveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DBD2C2D3E5D007C782A /* AchieveDetailView.swift */; };
+		DD1C3DC12C2D3EFF007C782A /* AssessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DC02C2D3EFF007C782A /* AssessView.swift */; };
+		DD1C3DC32C2D3F45007C782A /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DC22C2D3F45007C782A /* LogsView.swift */; };
+		DD1C3DC62C2D4092007C782A /* CandyBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DC52C2D4092007C782A /* CandyBoxView.swift */; };
+		DD1C3DCA2C2D4836007C782A /* JourneyNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DC92C2D4836007C782A /* JourneyNotesView.swift */; };
+		DD1C3DCC2C2D4872007C782A /* ValidateQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DCB2C2D4872007C782A /* ValidateQuestView.swift */; };
+		DD1C3DCF2C2D4A02007C782A /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DCE2C2D4A02007C782A /* LoginVM.swift */; };
+		DD1C3DD12C2D4A16007C782A /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DD02C2D4A16007C782A /* RegisterVM.swift */; };
+		DD1C3DD42C2D4A63007C782A /* AchievementVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DD32C2D4A62007C782A /* AchievementVM.swift */; };
+		DD1C3DD62C2D4A7F007C782A /* AccountVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DD52C2D4A7F007C782A /* AccountVM.swift */; };
+		DD1C3DD82C2D4AB5007C782A /* QuestPerMonthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DD72C2D4AB5007C782A /* QuestPerMonthVM.swift */; };
+		DD1C3DDB2C2D4AFA007C782A /* InputCodeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DDA2C2D4AFA007C782A /* InputCodeVM.swift */; };
+		DD1C3DDD2C2D4B13007C782A /* InputLoveLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1C3DDC2C2D4B13007C782A /* InputLoveLanguageVM.swift */; };
 		DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AE92C283A3100256406 /* PersonModel.swift */; };
-		DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AEB2C283A9E00256406 /* LoginVM.swift */; };
 		DD429AEE2C286C3F00256406 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AED2C286C3F00256406 /* API.swift */; };
 		DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */; };
 		DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9D16392C1F4A3D0001FE44 /* CandyPotionApp.swift */; };
@@ -66,24 +62,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		468A2F972C240229005C825F /* DailyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuestView.swift; sourceTree = "<group>"; };
-		468A2F992C2406D9005C825F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		468A2F9B2C2406F5005C825F /* QuestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestViewModel.swift; sourceTree = "<group>"; };
 		468A2F9F2C241056005C825F /* LoveLanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLanguageModel.swift; sourceTree = "<group>"; };
-		468A2FA12C241530005C825F /* ValidateQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateQuestView.swift; sourceTree = "<group>"; };
 		468A2FBE2C282910005C825F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyNotesView.swift; sourceTree = "<group>"; };
-		468A2FC12C29C138005C825F /* WeeklyQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyQuestView.swift; sourceTree = "<group>"; };
+		468A2FC72C2ACB26005C825F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLogView.swift; sourceTree = "<group>"; };
 		9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListLog.swift; sourceTree = "<group>"; };
-		9B2DD0D02C2C574E00647E02 /* QuestPerMonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPerMonthViewModel.swift; sourceTree = "<group>"; };
-		468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyBoxView.swift; sourceTree = "<group>"; };
-		468A2FC52C2ACA25005C825F /* RecipeBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookView.swift; sourceTree = "<group>"; };
-		468A2FC72C2ACB26005C825F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		468A2FC92C2BB700005C825F /* AssessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessView.swift; sourceTree = "<group>"; };
-		468A2FCB2C2BB746005C825F /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
-		468A2FCD2C2BC9C6005C825F /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
-		9B3916472C28247700082A07 /* InputLoveLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguage.swift; sourceTree = "<group>"; };
 		9B39164A2C285E6600082A07 /* Mali-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Regular.ttf"; sourceTree = "<group>"; };
 		9B39164B2C285E6600082A07 /* Mali-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		9B39164C2C285E6600082A07 /* Mali-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-Medium.ttf"; sourceTree = "<group>"; };
@@ -97,26 +81,33 @@
 		9B3916542C285E6600082A07 /* Mali-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-LightItalic.ttf"; sourceTree = "<group>"; };
 		9B3916552C285E6600082A07 /* Mali-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mali-ExtraLight.ttf"; sourceTree = "<group>"; };
 		9B3916622C285E9D00082A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		9B67975A2C2ACB4C00BC11D3 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
-		9B67975C2C2B7A4100BC11D3 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		9B67975E2C2B909F00BC11D3 /* AchievementBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementBadge.swift; sourceTree = "<group>"; };
 		9B6797602C2BCE1C00BC11D3 /* OpenBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenBook.swift; sourceTree = "<group>"; };
-		9B6797622C2BE63000BC11D3 /* AchievementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailView.swift; sourceTree = "<group>"; };
 		9B89800C2C2283A700388BE1 /* QuestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModel.swift; sourceTree = "<group>"; };
 		9B89800E2C22860200388BE1 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		9B8980102C22866F00388BE1 /* BadgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModel.swift; sourceTree = "<group>"; };
-		9B8980122C22A95D00388BE1 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		9B8980142C23CCF000388BE1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		9B8980162C2412E500388BE1 /* InputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
-		DD0057EA2C2943AF00F64802 /* InputCodeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeVM.swift; sourceTree = "<group>"; };
-		DD0057EC2C29678000F64802 /* GetAccountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountVM.swift; sourceTree = "<group>"; };
-		DD0057F02C299C7400F64802 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
-		DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguageVM.swift; sourceTree = "<group>"; };
 		DD0057FA2C2B283300F64802 /* QuestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCard.swift; sourceTree = "<group>"; };
 		DD0057FD2C2B2AD800F64802 /* QuestVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestVM.swift; sourceTree = "<group>"; };
 		DD0057FF2C2BC7D000F64802 /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
+		DD1C3DB02C2D3D0C007C782A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DD1C3DB22C2D3D2A007C782A /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		DD1C3DB52C2D3D90007C782A /* InputCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeView.swift; sourceTree = "<group>"; };
+		DD1C3DB72C2D3DAE007C782A /* LoveLangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveLangView.swift; sourceTree = "<group>"; };
+		DD1C3DBB2C2D3E38007C782A /* AchieveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchieveView.swift; sourceTree = "<group>"; };
+		DD1C3DBD2C2D3E5D007C782A /* AchieveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchieveDetailView.swift; sourceTree = "<group>"; };
+		DD1C3DC02C2D3EFF007C782A /* AssessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessView.swift; sourceTree = "<group>"; };
+		DD1C3DC22C2D3F45007C782A /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		DD1C3DC52C2D4092007C782A /* CandyBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyBoxView.swift; sourceTree = "<group>"; };
+		DD1C3DC92C2D4836007C782A /* JourneyNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyNotesView.swift; sourceTree = "<group>"; };
+		DD1C3DCB2C2D4872007C782A /* ValidateQuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateQuestView.swift; sourceTree = "<group>"; };
+		DD1C3DCE2C2D4A02007C782A /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		DD1C3DD02C2D4A16007C782A /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		DD1C3DD32C2D4A62007C782A /* AchievementVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementVM.swift; sourceTree = "<group>"; };
+		DD1C3DD52C2D4A7F007C782A /* AccountVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVM.swift; sourceTree = "<group>"; };
+		DD1C3DD72C2D4AB5007C782A /* QuestPerMonthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPerMonthVM.swift; sourceTree = "<group>"; };
+		DD1C3DDA2C2D4AFA007C782A /* InputCodeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeVM.swift; sourceTree = "<group>"; };
+		DD1C3DDC2C2D4B13007C782A /* InputLoveLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputLoveLanguageVM.swift; sourceTree = "<group>"; };
 		DD429AE92C283A3100256406 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
-		DD429AEB2C283A9E00256406 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		DD429AED2C286C3F00256406 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		DD429AF12C2893E900256406 /* LoginRegisterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterStruct.swift; sourceTree = "<group>"; };
 		DD9D16362C1F4A3D0001FE44 /* CandyPotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyPotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,8 +152,89 @@
 			isa = PBXGroup;
 			children = (
 				DD0057FD2C2B2AD800F64802 /* QuestVM.swift */,
+				DD1C3DD72C2D4AB5007C782A /* QuestPerMonthVM.swift */,
 			);
 			path = Quest;
+			sourceTree = "<group>";
+		};
+		DD1C3DAE2C2C70FB007C782A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DD1C3DAF2C2D3CEC007C782A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DB02C2D3D0C007C782A /* LoginView.swift */,
+				DD1C3DB22C2D3D2A007C782A /* RegisterView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DD1C3DB42C2D3D43007C782A /* Post Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DB52C2D3D90007C782A /* InputCodeView.swift */,
+				DD1C3DB72C2D3DAE007C782A /* LoveLangView.swift */,
+			);
+			path = "Post Authentication";
+			sourceTree = "<group>";
+		};
+		DD1C3DBA2C2D3E25007C782A /* Recipe Book */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DBB2C2D3E38007C782A /* AchieveView.swift */,
+				DD1C3DBD2C2D3E5D007C782A /* AchieveDetailView.swift */,
+			);
+			path = "Recipe Book";
+			sourceTree = "<group>";
+		};
+		DD1C3DBF2C2D3EBE007C782A /* JourneyNotes */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DC02C2D3EFF007C782A /* AssessView.swift */,
+				DD1C3DC22C2D3F45007C782A /* LogsView.swift */,
+				DD1C3DC92C2D4836007C782A /* JourneyNotesView.swift */,
+				DD1C3DCB2C2D4872007C782A /* ValidateQuestView.swift */,
+			);
+			path = JourneyNotes;
+			sourceTree = "<group>";
+		};
+		DD1C3DC42C2D407E007C782A /* CandyBox */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DC52C2D4092007C782A /* CandyBoxView.swift */,
+			);
+			path = CandyBox;
+			sourceTree = "<group>";
+		};
+		DD1C3DCD2C2D49EA007C782A /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DCE2C2D4A02007C782A /* LoginVM.swift */,
+				DD1C3DD02C2D4A16007C782A /* RegisterVM.swift */,
+				DD1C3DD52C2D4A7F007C782A /* AccountVM.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DD1C3DD22C2D4A38007C782A /* Recipe Book */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DD32C2D4A62007C782A /* AchievementVM.swift */,
+			);
+			path = "Recipe Book";
+			sourceTree = "<group>";
+		};
+		DD1C3DD92C2D4AE4007C782A /* Post Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DD1C3DDA2C2D4AFA007C782A /* InputCodeVM.swift */,
+				DD1C3DDC2C2D4B13007C782A /* InputLoveLanguageVM.swift */,
+			);
+			path = "Post Authentication";
 			sourceTree = "<group>";
 		};
 		DD9D162D2C1F4A3D0001FE44 = {
@@ -170,6 +242,7 @@
 			children = (
 				DD9D16382C1F4A3D0001FE44 /* CandyPotion */,
 				DD9D16372C1F4A3D0001FE44 /* Products */,
+				DD1C3DAE2C2C70FB007C782A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,22 +305,12 @@
 		DDBB7E002C1F54DE003CD2CD /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				DDBB7E032C1F5515003CD2CD /* MainView.swift */,
-				9B67975A2C2ACB4C00BC11D3 /* AchievementView.swift */,
-				9B6797622C2BE63000BC11D3 /* AchievementDetailView.swift */,
-				468A2F972C240229005C825F /* DailyQuestView.swift */,
-				468A2FA12C241530005C825F /* ValidateQuestView.swift */,
-				9B8980122C22A95D00388BE1 /* RegisterView.swift */,
-				9B8980142C23CCF000388BE1 /* LoginView.swift */,
-				9B8980162C2412E500388BE1 /* InputCodeView.swift */,
-				9B3916472C28247700082A07 /* InputLoveLanguage.swift */,
-				468A2FBF2C291BFF005C825F /* JourneyNotesView.swift */,
-				468A2FC32C2AC9BB005C825F /* CandyBoxView.swift */,
-				468A2FC52C2ACA25005C825F /* RecipeBookView.swift */,
+				DD1C3DC42C2D407E007C782A /* CandyBox */,
+				DD1C3DBF2C2D3EBE007C782A /* JourneyNotes */,
+				DD1C3DBA2C2D3E25007C782A /* Recipe Book */,
+				DD1C3DB42C2D3D43007C782A /* Post Authentication */,
+				DD1C3DAF2C2D3CEC007C782A /* Authentication */,
 				468A2FC72C2ACB26005C825F /* MainView.swift */,
-				468A2FC92C2BB700005C825F /* AssessView.swift */,
-				468A2FCB2C2BB746005C825F /* LogsView.swift */,
-				468A2FCD2C2BC9C6005C825F /* DummyView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -258,7 +321,6 @@
 				DDBB7E072C1F56A3003CD2CD /* TextFieldInput.swift */,
 				9B67975E2C2B909F00BC11D3 /* AchievementBadge.swift */,
 				9B6797602C2BCE1C00BC11D3 /* OpenBook.swift */,
-				468A2F992C2406D9005C825F /* CardView.swift */,
 				9B2DD0CC2C2C4E5300647E02 /* CardLogView.swift */,
 				9B2DD0CE2C2C53DF00647E02 /* ListLog.swift */,
 				DD0057FA2C2B283300F64802 /* QuestCard.swift */,
@@ -278,15 +340,11 @@
 		DDBB7E0D2C1F596F003CD2CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DD1C3DD92C2D4AE4007C782A /* Post Authentication */,
+				DD1C3DD22C2D4A38007C782A /* Recipe Book */,
+				DD1C3DCD2C2D49EA007C782A /* Authentication */,
 				DD0057FC2C2B2AB600F64802 /* Quest */,
 				468A2F9B2C2406F5005C825F /* QuestViewModel.swift */,
-				9B67975C2C2B7A4100BC11D3 /* AchievementViewModel.swift */,
-				9B2DD0D02C2C574E00647E02 /* QuestPerMonthViewModel.swift */,
-				DD429AEB2C283A9E00256406 /* LoginVM.swift */,
-				DD0057EA2C2943AF00F64802 /* InputCodeVM.swift */,
-				DD0057EC2C29678000F64802 /* GetAccountVM.swift */,
-				DD0057F02C299C7400F64802 /* RegisterVM.swift */,
-				DD0057F22C299CD700F64802 /* InputLoveLanguageVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -377,47 +435,42 @@
 			files = (
 				468A2F9C2C2406F5005C825F /* QuestViewModel.swift in Sources */,
 				9B89800D2C2283A700388BE1 /* QuestModel.swift in Sources */,
-				468A2FC02C291BFF005C825F /* JourneyNotesView.swift in Sources */,
-				DD0057EB2C2943AF00F64802 /* InputCodeVM.swift in Sources */,
-				9B8980132C22A95D00388BE1 /* RegisterView.swift in Sources */,
+				DD1C3DB32C2D3D2A007C782A /* RegisterView.swift in Sources */,
+				DD1C3DD12C2D4A16007C782A /* RegisterVM.swift in Sources */,
+				DD1C3DBC2C2D3E38007C782A /* AchieveView.swift in Sources */,
+				DD1C3DD62C2D4A7F007C782A /* AccountVM.swift in Sources */,
+				DD1C3DCF2C2D4A02007C782A /* LoginVM.swift in Sources */,
 				DD429AF22C2893E900256406 /* LoginRegisterStruct.swift in Sources */,
-				DD429AEC2C283A9E00256406 /* LoginVM.swift in Sources */,
-				468A2FCE2C2BC9C6005C825F /* DummyView.swift in Sources */,
-				DD0057F12C299C7400F64802 /* RegisterVM.swift in Sources */,
-				9B8980172C2412E500388BE1 /* InputCodeView.swift in Sources */,
+				DD1C3DC62C2D4092007C782A /* CandyBoxView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
-				468A2FC22C29C138005C825F /* WeeklyQuestView.swift in Sources */,
-				468A2FC62C2ACA25005C825F /* RecipeBookView.swift in Sources */,
+				468A2FC22C29C138005C825F /* (null) in Sources */,
+				DD1C3DCC2C2D4872007C782A /* ValidateQuestView.swift in Sources */,
 				DD0058002C2BC7D000F64802 /* LogModel.swift in Sources */,
-				DD0057ED2C29678000F64802 /* GetAccountVM.swift in Sources */,
-				468A2FCA2C2BB700005C825F /* AssessView.swift in Sources */,
+				DD1C3DCA2C2D4836007C782A /* JourneyNotesView.swift in Sources */,
 				468A2FC82C2ACB26005C825F /* MainView.swift in Sources */,
 				DD429AEA2C283A3100256406 /* PersonModel.swift in Sources */,
-				9B67975B2C2ACB4C00BC11D3 /* AchievementView.swift in Sources */,
-				9B67975D2C2B7A4100BC11D3 /* AchievementViewModel.swift in Sources */,
-				DD0057EF2C29740500F64802 /* LoadingView.swift in Sources */,
-				9B6797632C2BE63100BC11D3 /* AchievementDetailView.swift in Sources */,
-				468A2FC42C2AC9BB005C825F /* CandyBoxView.swift in Sources */,
+				DD1C3DB82C2D3DAE007C782A /* LoveLangView.swift in Sources */,
+				DD1C3DDB2C2D4AFA007C782A /* InputCodeVM.swift in Sources */,
 				9B89800F2C22860200388BE1 /* AchievementModel.swift in Sources */,
 				DDBB7E082C1F56A3003CD2CD /* TextFieldInput.swift in Sources */,
 				9B8980112C22866F00388BE1 /* BadgeModel.swift in Sources */,
-				DD0057F32C299CD700F64802 /* InputLoveLanguageVM.swift in Sources */,
-				9B2DD0D12C2C574E00647E02 /* QuestPerMonthViewModel.swift in Sources */,
+				DD1C3DBE2C2D3E5D007C782A /* AchieveDetailView.swift in Sources */,
 				DD0057FE2C2B2AD800F64802 /* QuestVM.swift in Sources */,
-				9B8980152C23CCF000388BE1 /* LoginView.swift in Sources */,
+				DD1C3DD42C2D4A63007C782A /* AchievementVM.swift in Sources */,
+				DD1C3DDD2C2D4B13007C782A /* InputLoveLanguageVM.swift in Sources */,
+				DD1C3DB62C2D3D90007C782A /* InputCodeView.swift in Sources */,
 				DDBB7E062C1F5657003CD2CD /* String+Extension.swift in Sources */,
-				9B3916482C28247700082A07 /* InputLoveLanguage.swift in Sources */,
-				468A2FCC2C2BB746005C825F /* LogsView.swift in Sources */,
 				DD429AEE2C286C3F00256406 /* API.swift in Sources */,
+				DD1C3DC32C2D3F45007C782A /* LogsView.swift in Sources */,
 				DD9D163A2C1F4A3D0001FE44 /* CandyPotionApp.swift in Sources */,
 				9B2DD0CD2C2C4E5300647E02 /* CardLogView.swift in Sources */,
 				9B6797612C2BCE1C00BC11D3 /* OpenBook.swift in Sources */,
+				DD1C3DB12C2D3D0C007C782A /* LoginView.swift in Sources */,
+				DD1C3DD82C2D4AB5007C782A /* QuestPerMonthVM.swift in Sources */,
+				DD1C3DC12C2D3EFF007C782A /* AssessView.swift in Sources */,
 				9B2DD0CF2C2C53DF00647E02 /* ListLog.swift in Sources */,
-				468A2F9A2C2406D9005C825F /* CardView.swift in Sources */,
-				468A2F982C240229005C825F /* DailyQuestView.swift in Sources */,
 				DD0057FB2C2B283300F64802 /* QuestCard.swift in Sources */,
 				468A2FA02C241056005C825F /* LoveLanguageModel.swift in Sources */,
-				468A2FA22C241530005C825F /* ValidateQuestView.swift in Sources */,
 				9B67975F2C2B909F00BC11D3 /* AchievementBadge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

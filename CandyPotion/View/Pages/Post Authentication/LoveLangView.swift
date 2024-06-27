@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InputLoveLanguage: View {
+struct LoveLangView: View {
     @EnvironmentObject private var lovLangVM : InputLoveLanguageVM
 
     var body: some View {
@@ -95,6 +95,6 @@ struct LoveLangButton: View {
 }
 
 #Preview {
-    InputLoveLanguage()
+    LoveLangView()
         .environmentObject(InputLoveLanguageVM())
 }

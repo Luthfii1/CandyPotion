@@ -68,7 +68,7 @@ struct RegisterView: View {
                             ForEach(GENDER.allCases, id: \.self) { gender in
                                 Text(gender.rawValue.capitalized)
                                     .tag(gender)
-                                    .foregroundColor(registerVM.input.gender == gender ? .white : .primary) 
+                                    .foregroundColor(registerVM.input.gender == gender ? .white : .primary)
                             }
                         }
                         .pickerStyle(SegmentedPickerStyle())

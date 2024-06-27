@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CandyBoxView: View {
     @StateObject private var questVM = QuestVM()
-    @EnvironmentObject private var accountVM : GetAccountVM
+    @EnvironmentObject private var accountVM : AccountVM
     // =====================
     @State private var defaultHeight: CGFloat = 0.8
     @State private var offsetVal = 700
@@ -24,10 +24,6 @@ struct CandyBoxView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height: 50)
-                            .overlay(
-                                RoundedCorner()
-                                    .stroke(.gray, lineWidth: 3)
-                            )
                     })
                 }
                 .padding(.top, 40)
@@ -85,24 +81,24 @@ struct CandyBoxView: View {
                 }
             }
             
-            //            accountVM.getPartner { success in
-            //                if success {
-            //                    print("Partner name: \(accountVM.partner.name)")
-            //
-            //                    if let loveLanguage = accountVM.partner.loveLanguage {
-            //                        questVM.getRandomQuest(loveLang: loveLanguage)
-            //                    } else {
-            //                        print("Partner love language is nil")
-            //                    }
-            //                } else {
-            //                    print("Failed to fetch account data getPartner")
-            //                }
-            //            }
+            accountVM.getPartner { success in
+                if success {
+                    print("Partner name: \(accountVM.partner.name)")
+                    
+                    if let loveLanguage = accountVM.partner.loveLanguage {
+                        questVM.getRandomQuest(loveLang: loveLanguage)
+                    } else {
+                        print("Partner love language is nil")
+                    }
+                } else {
+                    print("Failed to fetch account data getPartner")
+                }
+            }
         }
     }
 }
 
 #Preview {
     CandyBoxView()
-        .environmentObject(GetAccountVM())
+        .environmentObject(AccountVM())
 }

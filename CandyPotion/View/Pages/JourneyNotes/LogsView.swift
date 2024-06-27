@@ -13,12 +13,6 @@ struct LogsView: View {
             Image("Logs Bar")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            
-            
-            
-            
-            
-            
         }
         
     }

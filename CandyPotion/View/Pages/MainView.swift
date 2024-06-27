@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject private var accountVM : GetAccountVM
+    @EnvironmentObject private var accountVM : AccountVM
     @State private var selectedTab: Int = 1
     
     var body: some View {
@@ -17,7 +17,7 @@ struct MainView: View {
             switch selectedTab {
             case 0:
                 NavigationView {
-                    RecipeBookView()
+                    AchieveView()
                 }
             case 1:
                 NavigationView {
@@ -90,5 +90,5 @@ struct TabBarItem: View {
 
 #Preview {
     MainView()
-        .environmentObject(GetAccountVM())
+        .environmentObject(AccountVM())
 }

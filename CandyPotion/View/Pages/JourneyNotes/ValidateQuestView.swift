@@ -22,8 +22,6 @@ struct ValidateQuestView: View {
                         Text(formatDate(quest.dateQuest))
                             .font(.subheadline)
                             .foregroundColor(.gray)
-                        
-                        
                     }
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))

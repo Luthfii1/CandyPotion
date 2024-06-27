@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GetAccountVM: ObservableObject {
+class AccountVM: ObservableObject {
     @Published var person: PersonModel
     @Published var partner: PersonModel
     @Published var condition: Conditions

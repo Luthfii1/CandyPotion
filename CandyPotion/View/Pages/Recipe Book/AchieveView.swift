@@ -7,18 +7,22 @@
 
 import SwiftUI
 
-struct AchievementView: View {
+struct AchieveView: View {
     @StateObject private var achievements = AchievementViewModel()
     @State private var selectedIndex: Int = 0
-
+    
     var body: some View {
         NavigationView {
             ZStack {
-                Image("bg-light").ignoresSafeArea()
-
+                Image("bg-light")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                
+                
                 VStack(alignment: .leading) {
                     Spacer().frame(height: 36)
-
+                    
                     ZStack {
                         Rectangle()
                             .foregroundColor(.clear)
@@ -32,13 +36,13 @@ struct AchievementView: View {
                         TabView(selection: $selectedIndex) {
                             let monthList = achievements.monthList
                             let quantityList = achievements.quantityList
-
+                            
                             ForEach(0 ..< 4, id: \.self) { index in
                                 if let list = achievements.achievementList, list.count > index {
                                     let badge = list[index]
                                     let month = monthList![index]
                                     let quantity = quantityList![index]
-
+                                    
                                     if (index + 1) % 2 != 0 {
                                         ZStack {
                                             VStack {
@@ -59,22 +63,22 @@ struct AchievementView: View {
                                                         if badge[0].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             }
                                                         }
-
+                                                        
                                                         if badge[1].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[1], badge: badge[1], candycount: quantity[1])
                                                             }
@@ -85,22 +89,22 @@ struct AchievementView: View {
                                                         if badge[2].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[2], badge: badge[2], candycount: quantity[2])
                                                             }
                                                         }
-
+                                                        
                                                         if badge[3].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[3], badge: badge[3], candycount: quantity[3])
                                                             }
@@ -114,9 +118,9 @@ struct AchievementView: View {
                                                                 .weight(.semibold)
                                                         )
                                                         .padding(.leading)
-
+                                                    
                                                     Spacer().frame(width: 225)
-
+                                                    
                                                     Text("Recipes")
                                                         .font(
                                                             Font.custom("Mali", size: 20)
@@ -133,65 +137,65 @@ struct AchievementView: View {
                                                 Spacer()
                                             }
                                         }
-
+                                        
                                     } else {
                                         ZStack {
-//                                            Image("page-right")
-//                                                .resizable()
-//                                                .frame(width: 386, height: 592)
-//                                                .padding(.trailing, 7)
-
+                                            //                                            Image("page-right")
+                                            //                                                .resizable()
+                                            //                                                .frame(width: 386, height: 592)
+                                            //                                                .padding(.trailing, 7)
+                                            
                                             OpenBook(selectedIndex: $selectedIndex)
-
+                                            
                                             VStack {
                                                 VStack {
                                                     HStack {
                                                         if badge[0].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             }
                                                         }
-
+                                                        
                                                         if badge[1].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[1], badge: badge[1], candycount: quantity[1])
                                                             }
                                                         }
                                                     }
                                                     Spacer().frame(height: 20)
-
+                                                    
                                                     HStack {
                                                         if badge[2].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[2], badge: badge[2], candycount: quantity[2])
                                                             }
                                                         }
-
+                                                        
                                                         if badge[3].isEmpty {
                                                             Image("unknown")
                                                                 .frame(width: 163, height: 243)
-
+                                                            
                                                         } else {
                                                             NavigationLink {
-                                                                AchievementDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
+                                                                AchieveDetailView(month: month[0], badge: badge[0], candycount: quantity[0])
                                                             } label: {
                                                                 AchievementBadge(month: month[3], badge: badge[3], candycount: quantity[3])
                                                             }
@@ -204,9 +208,9 @@ struct AchievementView: View {
                                                             Font.custom("Mali", size: 20)
                                                                 .weight(.semibold)
                                                         )
-
+                                                    
                                                     Spacer().frame(width: 225)
-
+                                                    
                                                     Text("\(index + 1)")
                                                         .font(
                                                             Font.custom("Mali", size: 20)
@@ -241,6 +245,6 @@ struct AchievementView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementView()
+        AchieveView()
     }
 }

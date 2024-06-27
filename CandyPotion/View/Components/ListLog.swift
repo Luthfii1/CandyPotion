@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListLog: View {
     var month: String
-    @StateObject var questPerMonth = QuestPerMonthViewModel(month: 6, year: 2024)
+    @StateObject var questPerMonth = QuestPerMonthVM(month: 6, year: 2024)
 
     var body: some View {
         VStack {

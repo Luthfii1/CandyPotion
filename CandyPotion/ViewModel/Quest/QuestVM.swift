@@ -16,7 +16,7 @@ class QuestVM: ObservableObject {
     @Published var timeRemaining: TimeRemaining = TimeRemaining()
     @Published var checkedState: CheckedState = CheckedState()
     @Published var reqQuest: reqLog
-    @Published var accountVM: GetAccountVM = GetAccountVM()
+    @Published var accountVM: AccountVM = AccountVM()
     
     private var dailyTimer: Timer?
     private var weeklyTimer: Timer?
@@ -296,12 +296,12 @@ class QuestVM: ObservableObject {
     }
     
     func task(for questType: QuestType) -> String {
-        let isUnknown = GetAccountVM().partner.loveLanguage == .UNKNOWN
+//        let isUnknown = GetAccountVM().partner.loveLanguage == .UNKNOWN
             switch questType {
             case .daily:
-                if isUnknown {
-                    return "Your partner haven't choose love language."
-                }
+//                if isUnknown {
+//                    return "Your partner haven't choose love language."
+//                }
                 return task.daily != "" ? task.daily : "Fetching the data"
             case .weekly:
 //                return task.weekly
